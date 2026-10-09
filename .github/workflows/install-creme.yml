@@ -18,9 +18,9 @@ jobs:
       - name: Install website source
         run: |
           set -euo pipefail
-          rev=$(git log --all --diff-filter=A --format=%H -- creme-vercel-starter.zip | head -n 1)
+          rev=$(git log --all --diff-filter=A --format=%H -- "creme-vercel-starter 2.zip" | head -n 1)
           test -n "$rev"
-          git show "${rev}:creme-vercel-starter.zip" > /tmp/site.zip
+          git show "${rev}:creme-vercel-starter 2.zip" > /tmp/site.zip
           mkdir -p /tmp/site
           unzip -q /tmp/site.zip -d /tmp/site
           cp -a /tmp/site/creme-vercel-starter/. .
