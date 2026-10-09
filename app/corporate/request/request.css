@@ -56,3 +56,13 @@
 @media(max-width:920px){.cr-page-grid{grid-template-columns:1fr;gap:38px}.cr-side{position:static}.cr-side-list{margin:20px 0}.cr-side h2{font-size:46px}.cr-hero{padding:70px 0 65px}}
 @media(max-width:600px){.cr-hero{padding:61px 0 55px}.cr-hero h1{font-size:clamp(48px,12vw,70px);margin:22px 0 25px}.cr-hero .cr-intro{font-size:15px}.cr-proof{margin-top:30px;gap:13px 25px}.cr-page-grid{padding-top:58px;padding-bottom:72px}.cr-form{padding:25px 18px}.cr-form-heading strong{font-size:11px}.cr-choices{grid-template-columns:1fr 1fr;gap:8px}.cr-choice{min-height:110px;padding:14px 22px 14px 11px}.cr-choice strong{font-size:13px}.cr-choice small{font-size:10px}.cr-choice>span{right:7px;top:8px;font-size:12px}.cr-fields{grid-template-columns:1fr;gap:8px}.cr-side h2{font-size:42px}.cr-footer-band .shell{align-items:flex-start;flex-direction:column}}
 @media(max-width:380px){.cr-choices{grid-template-columns:1fr}.cr-choice{min-height:85px}}
+
+/* V4: prevent long titles/field labels from extending past iPhone viewport */
+.cr-page-grid,.cr-form,.cr-hero,.cr-side,.cr-fields,.cr-field,.cr-choices,.cr-choice{min-width:0;max-width:100%}
+.cr-form{overflow-wrap:anywhere}
+.cr-field{letter-spacing:.35px;line-height:1.4;word-break:normal}
+.cr-form input,.cr-form textarea,.cr-form select{max-width:100%;box-sizing:border-box}
+.cr-field .cr-attachment-note{font-size:11px;line-height:1.6;color:#666;letter-spacing:0;font-weight:400}
+.cr-form [type=file]{padding:12px 8px;white-space:normal;font-size:12px}
+.cr-form [type=file]::file-selector-button{border:1px solid #777;background:#eeeae0;padding:9px;margin-right:9px;color:#222}
+@media(max-width:600px){.cr-choice strong,.cr-choice small{overflow-wrap:anywhere}.cr-hero h1{overflow-wrap:normal}.cr-form{padding:24px 15px}.cr-field-heading{line-height:1.5}.cr-choice{padding-right:19px}.cr-side h2{overflow-wrap:anywhere}}

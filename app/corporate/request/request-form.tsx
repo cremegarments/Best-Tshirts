@@ -32,6 +32,7 @@ export function CorporateRequestForm() {
     const fields = new FormData(form);
     const get = (field:string) => String(fields.get(field)??"").trim();
     const notes = [
+      `Previous CRÈME order / invoice: ${get("previousOrder")||"Not specified"}`,
       `Corporate inquiry: ${need.title}`,
       `Organization sector: ${get("sector")||"Not specified"}`,
       `Buyer role: ${get("role")||"Not specified"}`,
@@ -51,17 +52,30 @@ export function CorporateRequestForm() {
     };
     setStatus("sending");setFeedback("");
     try {
-      const response = await fetch("/api/quote",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
-      const result:{message?:string} = await response.json();
+      const file=fields.get("attachment");
+      let attachment:undefined|{name:string;base64:string};
+      if(file instanceof File && file.size){
+        if(file.size>2*1024*1024)throw new Error("Please choose a PDF, JPG or PNG under 2 MB.");
+        if(!["application/pdf","image/jpeg","image/png"].includes(file.type))throw new Error("Only PDF, JPG and PNG files can be attached.");
+        const content=await new Promise<string>((resolve,reject)=>{
+          const reader=new FileReader();
+          reader.onload=()=>resolve(String(reader.result||"").split(",")[1]||"");
+          reader.onerror=()=>reject(new Error("Could not read this file"));
+          reader.readAsDataURL(file);
+        });
+        attachment={name:file.name,base64:content};
+      }
+      const response = await fetch("/api/quote",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...payload,attachment})});
+      const result:{message?:string;reference?:string} = await response.json();
       if(!response.ok) throw new Error(result.message||"Your request could not be sent.");
-      setStatus("success");setFeedback("Your corporate request has been sent. CRÈME will review the details and follow up by email.");
+      setStatus("success");setFeedback(`Your corporate request has been sent. Reference: ${result.reference||"received"}. CRÈME will review your brief and follow up by email.`);
       form.reset();
     } catch(error) {
       setStatus("error");setFeedback(error instanceof Error?error.message:"Something went wrong. Please try again.");
     }
   }
 
-  return <form className="cr-form" onSubmit={handleSubmit}>
+  return <form className="cr-form" onSubmit={handleSubmit} encType="multipart/form-data">
     <div className="cr-form-heading"><span>BUSINESS RFQ / 001</span><strong>START YOUR REQUEST ↗</strong></div>
     <fieldset className="cr-choice-set"><legend>01 / WHAT DO YOU NEED? <b>*</b></legend>
       <div className="cr-choices">{needs.map(n=><button key={n.id} type="button" aria-pressed={selected===n.id} className={`cr-choice ${selected===n.id?"cr-active":""}`} onClick={()=>{setSelected(n.id);setStatus("idle");setFeedback("");}}><strong>{n.title}</strong><small>{n.short}</small><span aria-hidden="true">{selected===n.id?"●":"↗"}</span></button>)}</div>
@@ -79,11 +93,13 @@ export function CorporateRequestForm() {
     <div className="cr-field-heading">03 / THE REQUIREMENT</div>
     <div className="cr-fields">
       <label className="cr-field">ESTIMATED QUANTITY <b>*</b><input type="number" min={1} max={100000} required name="quantity" placeholder="e.g. 250"/></label>
-      <label className="cr-field">PURCHASING FREQUENCY<select name="frequency" defaultValue="One-time order"><option>One-time order</option><option>Repeat order</option><option>Ongoing supply program</option><option>Still deciding</option></select></label>
+      {selected==="repeat"&&<label className="cr-field">PREVIOUS ORDER / INVOICE NO.<input name="previousOrder" maxLength={100} placeholder="Optional, e.g. CR-1024"/></label>}
+      <label className="cr-field">PURCHASING FREQUENCY<select name="frequency" defaultValue={selected==="repeat"?"Repeat order":"One-time order"} key={selected}><option>One-time order</option><option>Repeat order</option><option>Ongoing supply program</option><option>Still deciding</option></select></label>
       <label className="cr-field">TARGET BUDGET (KYD)<input inputMode="decimal" name="budget" maxLength={30} placeholder="Optional, CI$"/></label>
       <label className="cr-field">NEEDED BY<input type="date" name="deadline"/></label>
       <label className="cr-field">DELIVERY AREA<input name="delivery" maxLength={120} placeholder="e.g. George Town, Grand Cayman"/></label>
       <label className="cr-field">PRODUCT / ARTWORK REFERENCE URL<input type="url" name="artwork" maxLength={1000} placeholder="https://… (optional)"/></label>
+      <label className="cr-field cr-wide">ATTACH ARTWORK / SPECIFICATIONS (PDF, JPG, PNG · UP TO 2 MB)<input type="file" name="attachment" accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg"/><small className="cr-attachment-note">One file per inquiry. No account details or confidential personal records. Larger files can be arranged directly with CRÈME.</small></label>
       <label className="cr-field cr-wide">PRODUCT SPECIFICATIONS / BRAND REQUIREMENTS<textarea rows={3} name="specs" maxLength={650} placeholder="Colours, sizes, logo methods, materials, dimensions, packaging, standards…"/></label>
       <label className="cr-field cr-wide">DESCRIBE YOUR REQUEST <b>*</b><textarea rows={5} required name="details" maxLength={3000} placeholder="What products do you need? Tell us about intended use, quantities, variants and anything that would help us assess suppliers and costs."/></label>
       <label className="cr-field cr-wide">PURCHASING / DOCUMENTATION REQUIREMENTS<textarea rows={2} name="requirements" maxLength={300} placeholder="Optional: purchase order, vendor onboarding, tender reference, payment or invoicing requirements…"/></label>
@@ -93,6 +109,6 @@ export function CorporateRequestForm() {
     {status==="success"&&<p className="cr-feedback cr-success" role="status">{feedback}</p>}
     {status==="error"&&<p className="cr-feedback cr-error" role="alert">{feedback} <a href="mailto:info@cremeky.com">Email us directly ↗</a></p>}
     <button className="cr-submit" type="submit" disabled={status==="sending"}>{status==="sending"?"SENDING YOUR REQUEST…":"SUBMIT CORPORATE RFQ"}<span aria-hidden="true">↗</span></button>
-    <p className="cr-disclaimer">No payment is collected here. Please do not include confidential account numbers, credentials or sensitive personal information in your request.</p>
+    <p className="cr-disclaimer">No payment is collected here. Uploaded files are emailed to CRÈME, not publicly hosted. Do not include confidential account numbers, credentials or sensitive personal information.</p>
   </form>;
 }
