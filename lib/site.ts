@@ -4,7 +4,7 @@ export const site = {
   descriptor: "CUSTOM APPAREL / MERCHANDISE / PRODUCTION",
   since: "2015",
   location: "Cayman Islands",
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
+  email: globalThis.process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
 };
 
 export const services = [
