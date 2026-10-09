@@ -1,0 +1,58 @@
+/* CRÈME corporate RFQ page: standalone styles, no changes to global branding. */
+.cr-hero{background:#1d1f1c;color:#f8f5ee;padding:90px 0 78px;border-bottom:5px solid #b3694e}
+.cr-hero-inner{display:flex;flex-direction:column;align-items:flex-start}
+.cr-eyebrow{font-size:11px;font-weight:850;letter-spacing:2.2px;text-transform:uppercase;line-height:1.5}
+.cr-hero .cr-eyebrow{color:#d8b19d}
+.cr-hero h1{font-size:clamp(60px,9vw,133px);font-weight:900;letter-spacing:-.085em;line-height:.91;margin:32px 0 35px}
+.cr-hero h1 em,.cr-side h2 em{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.065em}
+.cr-intro{font-size:clamp(16px,2vw,22px);max-width:750px;line-height:1.6;color:#e3ded5}
+.cr-proof{display:flex;gap:24px;flex-wrap:wrap;margin-top:50px;padding-top:24px;width:100%;border-top:1px solid #ffffff3d}
+.cr-proof span{font-size:10px;letter-spacing:1.2px;font-weight:850;color:#d9d5cd}
+.cr-page-grid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:7%;align-items:start;padding-top:90px;padding-bottom:110px}
+.cr-side{position:sticky;top:110px}
+.cr-side .cr-eyebrow{color:#a95d46}
+.cr-side h2{font-size:clamp(38px,5vw,66px);letter-spacing:-.065em;line-height:1;margin:32px 0 25px}
+.cr-side p:not(.cr-eyebrow){font-size:15px;line-height:1.75;color:#5f605a}
+.cr-side-list{display:flex;flex-direction:column;border-top:1px solid #cfcac0;margin:35px 0}
+.cr-side-list span{border-bottom:1px solid #cfcac0;padding:18px 0;font-weight:800;font-size:11px;letter-spacing:.6px}
+.cr-side-note{font-size:12px!important}
+.cr-side-link{display:inline-block;margin-top:25px;border-bottom:1px solid #191919;padding-bottom:10px;font-size:13px;font-weight:800}
+.cr-form{background:#eeeae0;border:1px solid #d6d1c6;padding:38px 36px;min-width:0}
+.cr-form-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #c7c2b7;padding-bottom:22px;margin-bottom:33px}
+.cr-form-heading span{font-size:10px;letter-spacing:1px;font-weight:850;color:#6e6a60}
+.cr-form-heading strong{font-size:13px;font-weight:900;letter-spacing:.2px}
+.cr-choice-set{border:0;padding:0;margin:0 0 35px;min-width:0}
+.cr-choice-set legend,.cr-field-heading{font-weight:850;font-size:11px;letter-spacing:1.2px;margin-bottom:17px;text-transform:uppercase;width:100%;border:0;padding:0}
+.cr-form b{color:#a85b43}
+.cr-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.cr-choice{position:relative;border:1px solid #c7c2b7;background:#f9f6ef;text-align:left;padding:18px 38px 18px 16px;min-height:97px;cursor:pointer;color:#242522;transition:border-color .15s,background .15s}
+.cr-choice:hover{border-color:#8a8579}
+.cr-choice.cr-active{background:#20211f;border-color:#20211f;color:#f8f4ec}
+.cr-choice strong{display:block;font-size:15px;font-weight:850;letter-spacing:-.3px;margin-bottom:8px;line-height:1.25}
+.cr-choice small{display:block;font-size:11px;font-weight:400;line-height:1.45;opacity:.8}
+.cr-choice>span{position:absolute;top:13px;right:14px;font-size:15px}
+.cr-field-heading{border-top:1px solid #c7c2b7;padding-top:27px;margin:32px 0 22px}
+.cr-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:21px}
+.cr-field{display:flex;flex-direction:column;gap:10px;font-weight:850;font-size:10px;letter-spacing:.8px;margin-bottom:15px}
+.cr-field.cr-wide{grid-column:1/-1}
+.cr-field input,.cr-field select,.cr-field textarea{font-family:inherit;border:1px solid #c5c2b8;border-radius:0;background:#fcfaf5;padding:14px 12px;color:#21221f;font-size:14px;letter-spacing:0;min-width:0;width:100%}
+.cr-field input:focus,.cr-field select:focus,.cr-field textarea:focus{outline:2px solid #b3694e;outline-offset:1px}
+.cr-field textarea{resize:vertical;line-height:1.5}
+.cr-field input::placeholder,.cr-field textarea::placeholder{color:#85857d}
+.cr-consent{display:flex;align-items:flex-start;gap:13px;font-size:12px;line-height:1.65;margin:27px 0}
+.cr-consent input{flex:none;width:18px;height:18px;accent-color:#20211f;margin-top:2px}
+.cr-submit{border:0;background:#1c1e1a;color:white;padding:22px 24px;width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;font-family:inherit;font-weight:850;letter-spacing:1px;font-size:13px;cursor:pointer}
+.cr-submit:disabled{cursor:wait;opacity:.55}
+.cr-submit span{font-size:19px}
+.cr-feedback{font-size:13px;padding:18px;line-height:1.6;margin:20px 0}
+.cr-success{background:#dce9d7;color:#244629}.cr-error{background:#f7dfd9;color:#7a2920}.cr-error a{text-decoration:underline}
+.cr-disclaimer{font-size:11px;color:#696961;line-height:1.55;margin:18px 0 0}
+.cr-footer-band{background:#dedbd1;padding:33px 0}
+.cr-footer-band .shell{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}
+.cr-footer-band span{font-size:11px;letter-spacing:1px;font-weight:900}
+.cr-footer-band strong{font-size:11px;letter-spacing:1px}
+.cr-footer-band a{font-size:12px;font-weight:850;text-decoration:underline;text-underline-offset:4px}
+.cr-loading{padding:30px;color:#67675e}
+@media(max-width:920px){.cr-page-grid{grid-template-columns:1fr;gap:38px}.cr-side{position:static}.cr-side-list{margin:20px 0}.cr-side h2{font-size:46px}.cr-hero{padding:70px 0 65px}}
+@media(max-width:600px){.cr-hero{padding:61px 0 55px}.cr-hero h1{font-size:clamp(48px,12vw,70px);margin:22px 0 25px}.cr-hero .cr-intro{font-size:15px}.cr-proof{margin-top:30px;gap:13px 25px}.cr-page-grid{padding-top:58px;padding-bottom:72px}.cr-form{padding:25px 18px}.cr-form-heading strong{font-size:11px}.cr-choices{grid-template-columns:1fr 1fr;gap:8px}.cr-choice{min-height:110px;padding:14px 22px 14px 11px}.cr-choice strong{font-size:13px}.cr-choice small{font-size:10px}.cr-choice>span{right:7px;top:8px;font-size:12px}.cr-fields{grid-template-columns:1fr;gap:8px}.cr-side h2{font-size:42px}.cr-footer-band .shell{align-items:flex-start;flex-direction:column}}
+@media(max-width:380px){.cr-choices{grid-template-columns:1fr}.cr-choice{min-height:85px}}
