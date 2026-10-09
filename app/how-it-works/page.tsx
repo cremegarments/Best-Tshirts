@@ -1,0 +1,5 @@
+import type {Metadata} from "next";
+import Link from "next/link";
+import {process} from "@/lib/site";
+export const metadata:Metadata={title:"How It Works"};
+export default function ProcessPage(){return <><section className="subhero shell"><p className="eyebrow">OUR PROCESS / 03</p><h1>NO GUESSWORK.<br/><em>JUST GOOD WORK.</em></h1><p>Clear requirements, approved proofs and managed production from the first inquiry to your finished order.</p></section><section className="section shell page-section"><div className="process-list">{process.map(s=><div className="process-row" key={s.no}><span>{s.no}</span><h2>{s.title}</h2><p>{s.desc}</p></div>)}</div><div className="info-panel"><div><h2>LET'S TALK<br/><em>DETAILS.</em></h2></div><div><p>Actual production and delivery timing depends on product selection, artwork approval, quantity and shipping arrangements. We confirm dates during quoting.</p><Link href="/quote" className="button button-dark">Start your project ↗</Link></div></div></section></>}

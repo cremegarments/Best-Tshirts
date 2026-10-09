@@ -1,0 +1,5 @@
+import type {Metadata} from "next";
+import {Suspense} from "react";
+import {QuoteForm} from "./quote-form";
+export const metadata:Metadata={title:"Get a Quote"};
+export default function QuotePage(){return <><section className="subhero shell quote-hero"><p className="eyebrow">PROJECT INQUIRY / 06</p><h1>LET'S MAKE<br/><em>YOUR IDEA REAL.</em></h1><p>Tell us what you need. We’ll review your specifications and follow up with next steps and pricing.</p></section><section className="section shell quote-layout"><aside><p className="eyebrow">BEFORE YOU START</p><h2>THE MORE DETAIL,<br/><em>THE BETTER.</em></h2><p>Have artwork? Include a link to a file or folder. If you haven’t got artwork yet, explain the idea and we’ll discuss your options.</p><div className="quote-tips"><span>01 / PRODUCT OR SERVICE</span><span>02 / QUANTITY & SIZES</span><span>03 / ARTWORK OR BRIEF</span><span>04 / PREFERRED DEADLINE</span></div></aside><Suspense fallback={<div>Loading form…</div>}><QuoteForm/></Suspense></section></>}
