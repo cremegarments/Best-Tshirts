@@ -1,12 +1,12 @@
-# CRÈME Products — Vercel Website Starter
+# CRÈME Products — Corporate & Sourcing v2
 
 A premium, responsive Cayman-focused website, built with **Next.js 16 (App Router), React 19, TypeScript and hand-written CSS**. No CMS, payment processor or database is required for the initial launch.
 
 ## Included
 
-- Home, Services, Work, Process, About, Contact and Get a Quote pages
+- Home, Corporate, Services, Global Sourcing, Procurement & RFQs, Work, Process, About, Contact and Get a Quote pages
 - Mobile navigation and custom illustrated merchandise concepts
-- A quote form with inputs for product, quantity, needed-by date, contact details, brief and external artwork link
+- A quote form and dedicated sourcing form with product details, budget (KYD), needed-by date, and reference links
 - Server-side quote delivery via **Resend** when configured (no email is faked or silently discarded)
 - Metadata for search and social sharing
 - No real customer photos, prices, reviews, contact details or production promises have been invented
@@ -69,3 +69,7 @@ After real customer testing, consider private artwork uploads (Vercel Blob priva
 - No customer login, payment, shipping tracking or admin dashboard yet.
 - Actual production, pricing and delivery dates require manual approval.
 - You still need to configure business email, content, domain and launch security.
+
+## Existing CRÈME GitHub project upgrade
+
+To update `cremegarments/Best-Tshirts` from an iPhone, see `UPGRADE-README.md` inside the ZIP. The existing GitHub Actions installer handles a ZIP named `creme-vercel-starter.zip` and updates the live Vercel-connected repository.

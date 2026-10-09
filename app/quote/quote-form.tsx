@@ -31,8 +31,10 @@ export function QuoteForm() {
     <label>PHONE / WHATSAPP<input name="phone" type="tel" placeholder="Include country code" autoComplete="tel" maxLength={60}/></label>
     <label>SERVICE <b>*</b><select name="service" required defaultValue={services.some(s=>s.title===selectedService)?selectedService:""}><option value="" disabled>Choose a service</option>{services.map(s=><option key={s.number} value={s.title}>{s.title}</option>)}<option value="Not sure yet">Not sure yet</option></select></label>
     <label>ESTIMATED QUANTITY <b>*</b><input name="quantity" type="number" placeholder="e.g. 150" min={1} max={100000} required/></label>
+    <label>TARGET BUDGET (KYD)<input name="budget" inputMode="decimal" maxLength={30} placeholder="Optional, CI$"/></label>
     <label>NEEDED BY<input name="deadline" type="date"/></label>
-    <label>ARTWORK LINK<input name="artwork" type="url" placeholder="https://..." maxLength={1000}/></label></div>
+    <label>ARTWORK / REFERENCE LINK<input name="artwork" type="url" placeholder="https://..." maxLength={1000}/></label>
+    <label>DELIVERY AREA<input name="delivery" type="text" placeholder="e.g. George Town" maxLength={120}/></label></div>
     <label>PROJECT DETAILS <b>*</b><textarea name="details" rows={5} maxLength={4000} placeholder="Tell us about the garments, colors, sizes, printing positions, design and anything else we should know." required/></label>
     <label className="consent"><input type="checkbox" name="consent" required/> <span>I agree to be contacted about this project. Final pricing and lead times are confirmed after reviewing specifications.</span></label>
     <div className="honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabIndex={-1} autoComplete="off"/></label></div>
