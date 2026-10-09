@@ -1,0 +1,34 @@
+
+name: Install CREME Website
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install website source
+        run: |
+          set -euo pipefail
+          rev=$(git log --all --diff-filter=A --format=%H -- creme-vercel-starter.zip | head -n 1)
+          test -n "$rev"
+          git show "${rev}:creme-vercel-starter.zip" > /tmp/site.zip
+          mkdir -p /tmp/site
+          unzip -q /tmp/site.zip -d /tmp/site
+          cp -a /tmp/site/creme-vercel-starter/. .
+          rm -f creme-vercel-starter.zip
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Install CRÈME website"
+            git push
+          fi
