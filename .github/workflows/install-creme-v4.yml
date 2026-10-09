@@ -1,0 +1,46 @@
+name: Install CRÈME V4 Corporate Client Experience
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Apply CRÈME V4 upgrade to existing V3 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="creme-v4-upgrade.zip"
+          test -f "$archive" || { echo "Upload $archive to repository root first"; exit 1; }
+          mkdir -p /tmp/creme-v4
+          unzip -q "$archive" -d /tmp/creme-v4
+          for path in \
+            app/api/quote/route.ts \
+            app/corporate/request/request-form.tsx \
+            app/corporate/request/request.css \
+            app/corporate/page.tsx \
+            app/admin/requests/page.tsx \
+            app/admin/requests/layout.tsx \
+            app/admin/requests/requests.css \
+            app/api/admin/login/route.ts \
+            app/api/admin/logout/route.ts \
+            app/api/admin/requests/route.ts \
+            lib/rfq.ts \
+            lib/rfq-email.ts; do
+            test -f "/tmp/creme-v4/$path" || { echo "Missing V4 file: $path"; exit 1; }
+          done
+          cp -a /tmp/creme-v4/app/. app/
+          cp -a /tmp/creme-v4/lib/. lib/
+          cp /tmp/creme-v4/V4-README.md V4-README.md
+          rm "$archive"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app lib V4-README.md "$archive"
+          if ! git diff --cached --quiet; then
+            git commit -m "Upgrade CRÈME to V4 corporate RFQ and owner dashboard"
+            git push
+          fi
