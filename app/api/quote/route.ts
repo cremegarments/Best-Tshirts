@@ -40,3 +40,4 @@ export async function POST(request:Request) {
     return NextResponse.json({message:"Inquiry received."});
   } catch(error) {console.error("Inquiry submission error",error); return NextResponse.json({message:"The email service is temporarily unavailable. Please contact CRÈME directly."},{status:502});}
 }
+service==="Global sourcing" && category && !sourcingCategories.has(category)
