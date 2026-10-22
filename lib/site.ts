@@ -1,7 +1,7 @@
 export const site = {
   name: "CRÈME",
   legalName: "CRÈME Products",
-  descriptor: "CUSTOM APPAREL / MERCHANDISE / PRODUCTION",
+  descriptor: "CONSULTING / PRODUCT DEVELOPMENT / GLOBAL SOURCING / PRODUCTION",
   since: "2015",
   location: "Cayman Islands",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
@@ -20,11 +20,11 @@ export const services = [
 ];
 
 export const productionSteps = [
-  { no: "01", title: "Tell us the idea", desc: "Share the product type, artwork, quantities, size breakdown and target date." },
-  { no: "02", title: "Review your quote", desc: "We assess specifications and provide pricing and an estimated timeline." },
-  { no: "03", title: "Approve the details", desc: "Confirm the design proof, quote and payment terms before production begins." },
-  { no: "04", title: "We coordinate production", desc: "CRÈME manages approved manufacturing partners, quality and freight coordination." },
-  { no: "05", title: "Receive your order", desc: "We confirm final delivery arrangements for your Cayman Islands order." },
+  { no: "01", title: "Tell us the idea", desc: "Tell us what you want to build, source or develop, with references, quantities and your target date." },
+  { no: "02", title: "Review your quote", desc: "We review requirements, feasibility, supplier options, estimated pricing and timelines." },
+  { no: "03", title: "Approve the details", desc: "Approve the agreed scope, specifications, quotation and payment terms before work begins." },
+  { no: "04", title: "We coordinate production", desc: "CRÈME coordinates with approved suppliers and partners on production requirements, quality and freight." },
+  { no: "05", title: "Receive your order", desc: "We coordinate agreed delivery arrangements to your specified destination." },
 ];
 
 // Preserve the existing page imports without shadowing Node.js process.
