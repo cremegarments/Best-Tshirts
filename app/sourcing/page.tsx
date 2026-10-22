@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import Link from "next/link";
 import {SourcingForm} from "./sourcing-form";
 
-export const metadata:Metadata={title:"Global Product Sourcing",description:"Ask CRÈME to assess custom and bulk product sourcing through overseas supplier networks, coordinated for Cayman Islands delivery."};
+export const metadata:Metadata={title:"C2C | China 2 Caribbean — Global Sourcing",description:"C2C by CRÈME helps Cayman and Caribbean businesses explore China-based suppliers, product development, manufacturing and delivery coordination."};
 const groups=[
   {label:"01 / OFFICE & CORPORATE",title:"Workspace essentials",description:"Desk accessories, stationery, folders, organizers, onboarding items and custom corporate gift sets."},
   {label:"02 / BRANDED & PROMOTIONAL",title:"Merchandise for moments",description:"Custom drinkware, tech accessories, tote bags, event gifts, awards and presentation kits."},
@@ -13,6 +13,22 @@ const groups=[
 ];
 export default function SourcingPage(){return <>
   <section className="subhero shell enterprise-subhero"><p className="eyebrow">GLOBAL SOURCING / 03</p><h1>NEED IT?<br/><em>LET'S FIND A WAY.</em></h1><p>One point of contact for custom and bulk product sourcing. Share what you're looking for, and CRÈME can review available manufacturing options, costs and delivery requirements.</p><div className="page-actions"><Link href="#sourcing-inquiry" className="button button-dark">Submit a sourcing inquiry ↗</Link><Link href="/procurement" className="text-link">How purchasing works ↗</Link></div></section>
+  <section className="c2c-feature shell" aria-labelledby="c2c-heading">
+    <div className="c2c-feature-heading">
+      <p className="eyebrow">A CRÈME SOURCING INITIATIVE</p>
+      <strong className="c2c-wordmark">C2C<span>.</span></strong>
+      <h2 id="c2c-heading">CHINA 2 CARIBBEAN</h2>
+      <p className="c2c-tagline">Global manufacturing. Caribbean opportunity.</p>
+    </div>
+    <div className="c2c-feature-copy">
+      <p>From the Cayman Islands to the wider Caribbean, C2C connects businesses with China-based supplier discovery, product development, and coordinated manufacturing opportunities.</p>
+      <div className="c2c-capabilities">
+        <span>SUPPLIER DISCOVERY</span><span>QUOTATIONS &amp; SAMPLING</span><span>PRODUCTION COORDINATION</span><span>QUALITY REQUIREMENTS</span><span>FREIGHT PLANNING</span>
+      </div>
+      <p className="c2c-disclaimer">Availability, feasibility and partner responsibilities are assessed for each project. Manufacturing, inspection and freight services may be provided by independent suppliers and logistics partners.</p>
+      <Link href="#sourcing-inquiry" className="button button-dark">Start a C2C inquiry ↗</Link>
+    </div>
+  </section>
   <section className="source-band"><div className="shell"><span>YOUR REQUIREMENT</span><span aria-hidden="true">→</span><span>SUPPLIER OPTIONS</span><span aria-hidden="true">→</span><span>APPROVED PRODUCTION</span><span aria-hidden="true">→</span><span>CAYMAN DELIVERY PLAN</span></div></section>
   <section className="section shell page-section"><div className="section-heading"><div><p className="eyebrow">01 / WHAT WE CAN EXPLORE</p><h2>MORE POSSIBILITIES.<br/><em>ONE CONTACT.</em></h2></div><p>Use these as starting points, not a guaranteed inventory catalog. Product feasibility, legal requirements, minimum orders and availability vary.</p></div><div className="source-category-grid">{groups.map(g=><div className="source-category" key={g.label}><span className="eyebrow">{g.label}</span><h3>{g.title}</h3><p>{g.description}</p></div>)}</div></section>
   <section className="sourcing-caveat"><div className="shell sourcing-caveat-inner"><p className="eyebrow">A PROFESSIONAL PROMISE</p><h2>WE'LL TELL YOU<br/><em>WHAT'S POSSIBLE.</em></h2><p>Not every product can be imported or sourced economically. We assess specifications, supplier reliability, minimum order quantities, quality needs and Cayman import requirements before confirming an order. No purchase or production commitment is made until both parties approve the terms.</p></div></section>
