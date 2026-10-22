@@ -1,0 +1,273 @@
+[
+  {
+    "width": 390,
+    "route": "/",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 390,
+    "route": "/about",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 390,
+    "route": "/services",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 390,
+    "route": "/industries",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 390,
+    "route": "/automotive",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 390,
+    "route": "/sourcing",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 390,
+    "route": "/procurement",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 390,
+    "route": "/contact",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 390,
+    "route": "/quote",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 390,
+    "route": "/corporate",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 390,
+    "route": "/work",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 390,
+    "route": "/how-it-works",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 320,
+    "route": "/",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 320,
+    "route": "/about",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 320,
+    "route": "/services",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 320,
+    "route": "/industries",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 320,
+    "route": "/automotive",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 320,
+    "route": "/sourcing",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 320,
+    "route": "/procurement",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 320,
+    "route": "/contact",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 320,
+    "route": "/quote",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 320,
+    "route": "/corporate",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 320,
+    "route": "/work",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 320,
+    "route": "/how-it-works",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 1440,
+    "route": "/",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 1440,
+    "route": "/about",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 1440,
+    "route": "/services",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 1440,
+    "route": "/industries",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 1440,
+    "route": "/automotive",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 1440,
+    "route": "/sourcing",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 1440,
+    "route": "/procurement",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 1440,
+    "route": "/contact",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 1440,
+    "route": "/quote",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 1440,
+    "route": "/corporate",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 1440,
+    "route": "/work",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "width": 1440,
+    "route": "/how-it-works",
+    "status": 200,
+    "overflow": false,
+    "brokenImages": []
+  },
+  {
+    "menuOpens": true
+  },
+  {
+    "escapeCloses": true
+  },
+  {
+    "menuLinkCloses": true
+  },
+  {
+    "autoService": "Global sourcing",
+    "autoCategory": "Automotive / parts"
+  },
+  {
+    "emptyFormValid": false
+  },
+  {
+    "invalidFormStatus": 400
+  }
+]

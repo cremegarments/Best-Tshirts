@@ -1,0 +1,1 @@
+export function PhotoSpace({label}:{label:string}) {return <div className="photo-space" role="img" aria-label={`${label}: photograph pending approval`}><span>{label}<small>PHOTOGRAPH AWAITING APPROVAL</small></span></div>;}

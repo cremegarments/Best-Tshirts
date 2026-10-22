@@ -23,7 +23,7 @@ export default function SourcingPage(){return <>
     <div className="c2c-feature-copy">
       <p>C2C stands for China 2 Caribbean — and China 2 Cayman, where our Caribbean reach begins. We connect businesses with China-based supplier discovery, product development and coordinated manufacturing opportunities.</p>
       <div className="c2c-capabilities">
-        <span>SUPPLIER DISCOVERY</span><span>QUOTATIONS &amp; SAMPLING</span><span>PRODUCTION COORDINATION</span><span>QUALITY REQUIREMENTS</span><span>FREIGHT PLANNING</span>
+        <span>SUPPLIER IDENTIFICATION</span><span>PRODUCT SOURCING</span><span>PRODUCTION COORDINATION</span><span>QUALITY-CONTROL COORDINATION</span><span>FREIGHT &amp; LOGISTICS COORDINATION</span><span>CARIBBEAN BUSINESS PROCUREMENT</span>
       </div>
       <p className="c2c-disclaimer">Availability, feasibility and partner responsibilities are assessed for each project. Manufacturing, inspection and freight services may be provided by independent suppliers and logistics partners.</p>
       <Link href="#sourcing-inquiry" className="button button-dark">Start a C2C inquiry ↗</Link>

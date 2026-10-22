@@ -1,23 +1,22 @@
-# Approved imagery audit
+# Photography approval — redesign review
 
-Source: `creme-approved-image-extracts.zip`, supplied by the owner on 22 October 2026. These are flattened mockup extracts, not clean original photographs. No stock or generated images are used. Package README statements were treated as asset metadata; the user's request defines scope.
+The approved mockup defines the composition and visual direction. The repository contains eight low-resolution mockup extracts, not standalone original photographs. Several include embedded headings, captions and buttons. None are rendered in the redesigned pages; retained source files are reference material only.
 
-The 709 × 1536 master reference establishes the layout: white compact header, full-width apparel hero, four capability pillars, dark three-industry section, full-width C2C ship panel, then three service thumbnails. The implementation preserves complete approved image frames without destructive cropping. Live copy uses Arial/Helvetica and Georgia italic to approximate the reference; no font files were supplied. CAPKY positioning and inquiry routing remain available below the reference composition.
+The editable HTML composition is ready for photography review. Neutral labeled spaces deliberately reserve images without introducing unapproved stock, generated pictures, screenshot crops or upscaling. This is a structure-and-styling preview, **not a completed photographic or visual match**.
 
-| File | Pixels | Limitations and use |
-| --- | --- | --- |
-| 00-approved-master-reference.png | 709 × 1536 | Reference only; includes text and UI. Bottom service copy is cut off. Not used as a whole-page screenshot. |
-| 01-hero-apparel-studio.png | 709 × 447 | Embedded headline, body, buttons, gradient and process labels. Used whole, with accessible heading/copy and functional button hit areas. |
-| 02-industry-apparel.png | 221 × 198 | Embedded caption and arrow; used whole as inquiry link. |
-| 03-industry-automotive.png | 222 × 198 | Embedded caption and arrow; used whole as inquiry link. CAPKY details remain live below. |
-| 04-industry-construction.png | 221 × 198 | Embedded caption and arrow; used whole as inquiry link. |
-| 05-c2c-container-ship.png | 709 × 316 | Embedded headline, copy, route labels and CTA. Used whole with accessible description and functional CTA. |
-| 06-service-consulting.png | 203 × 87 | Low-resolution thumbnail; homepage consulting card. |
-| 07-service-product-development.png | 202 × 87 | Low-resolution thumbnail; homepage development card. |
-| 08-service-manufacturing.png | 206 × 87 | Low-resolution thumbnail; homepage sourcing/manufacturing card. |
+| Placement | Clean original or owner-approved replacement needed |
+| --- | --- |
+| Hero | Apparel development studio; racks on the right, workspace and sketches, dark left copy area |
+| Apparel | Black, white and gray premium garments |
+| Automotive | Cinematic black luxury vehicle interior |
+| Construction | Modern building and crane at warm sunset |
+| C2C | Container vessel at a major port, open left copy area |
+| Consulting | Professional planning meeting |
+| Development | Fashion sketches, fabric samples and technical work |
+| Manufacturing | Professional garment factory |
 
-All extracts have limited resolution: at the 1100px maximum composition width, the 709px panels and ~221px industry tiles are enlarged about 1.55×; service thumbnails about 1.53×. They will soften on desktop and high-density screens. Higher-resolution originals are needed for crisp large displays; nothing was silently substituted or AI-upscaled.
+Please provide the standalone originals, or approve replacement candidates before integration. No replacement candidates have been selected or generated in this revision. High-resolution sources will then be encoded into responsive formats with suitable mobile framing; final image loading, visual matching and iPhone approval remain pending.
 
-Embedded text cannot reflow, be localized or precisely match live typography. On narrow screens hero and C2C retain a 600px-wide scrollable frame so their text remains legible; equivalent functional text links are provided below. Industry and service cards stack on mobile. Embedded button artwork remains visible alongside the mobile links. This is an explicit compromise pending clean source images. The hero/industry/C2C typography is exactly the supplied raster artwork; surrounding live typography is approximate.
+## Review screenshots
 
-Only the review branch and draft PR are updated. No merge or production deployment.
+Captured in Chromium at 390 × 844 CSS pixels; these are browser emulation, not physical iPhone/Safari verification. See [screenshots](docs/review/) for Home, About, Services, Industries, Automotive, Sourcing, Procurement, Contact and Quote.
