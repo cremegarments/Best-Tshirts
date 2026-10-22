@@ -52,7 +52,7 @@ export async function POST(request:Request){
   if(!key||!to||!from)return NextResponse.json({message:"Email service is not configured. Please email info@cremeky.com."},{status:503});
   const ip=request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()||"unknown";
   try{if(!await submitAllowed(ip))return NextResponse.json({message:"Too many requests. Please email CRÈME directly."},{status:429});}
-  catch{return NextResponse.json({message:"Unable to accept inquiries at this time. Please email CRÈME directly."},{status:503});}
+  catch(err){console.error("Optional Redis rate limit unavailable; continuing email inquiry",err instanceof Error?err.message:"Unknown error");}
   const ref=randomUUID();
   const item:Rfq={id:ref,createdAt:new Date().toISOString(),status:"New",name,email,company,phone,service,details,quantity,deadline,artwork,category,delivery,budget,attachmentName:attachment?.filename};
   const text=["New CRÈME business inquiry",`Reference: ${ref.slice(0,8).toUpperCase()}`,`Name: ${name}`,`Company: ${company}`,`Email: ${email}`,`Phone: ${phone}`,`Service: ${service}`,`Product category: ${category}`,`Quantity: ${quantity===0?"Not applicable":quantity}`,`Target budget (KYD): ${budget?`CI$${budget}`:"Not supplied"}`,`Needed by: ${deadline||"Not specified"}`,`Delivery area: ${delivery||"Not specified"}`,`Reference: ${artwork||"Not supplied"}`,`Attachment: ${attachment?.filename||"Not supplied"}`,"","Project details:",details].join("\n");
