@@ -15,44 +15,18 @@ const industries = [
 ];
 
 export default function Home(){return <>
-  <section className="hero shell enterprise-hero creme-new-hero">
-    <div className="hero-copy">
-      <div className="eyebrow"><span className="online-dot"/> GLOBAL BUSINESS & MANUFACTURING SOLUTIONS</div>
-      <h1>YOUR VISION.<br/>OUR EXPERTISE.<br/><span className="italic-word">NO BOUNDARIES.</span></h1>
-      <p>Your consulting, product development, global sourcing and manufacturing partner. Connecting businesses across apparel, automotive and construction with the expertise to move from concept to creation.</p>
-      <div className="hero-actions"><Link href="#what-we-do" className="button button-dark">Explore our services <span aria-hidden="true">↗</span></Link><Link href="/contact" className="text-link">Let's talk <span aria-hidden="true">↗</span></Link></div>
-      <div className="hero-small"><span>EST. 2015 · CAYMAN ISLANDS</span><span>STRATEGY · SOURCING · PRODUCTION</span></div>
-    </div>
-    <div className="hero-architecture" aria-label="Temporary image placeholder: approved homepage hero photograph required">
-      <p className="image-placeholder-label">TEMPORARY IMAGE PLACEHOLDER · HERO ORIGINAL REQUIRED</p>
-      <div className="hero-architecture-top"><span>CRÈME / INTERNATIONAL</span><span>01 — 04</span></div>
-      <div className="hero-architecture-rings" aria-hidden="true"><span/><span/><span/></div>
-      <div className="hero-architecture-mark" aria-hidden="true">C<span>/</span></div>
-      <div className="hero-architecture-foot">
-        <span className="hero-architecture-kicker">FROM CONCEPT TO CREATION</span>
-        <div className="hero-architecture-grid"><span>STRATEGY</span><span>DEVELOPMENT</span><span>SOURCING</span><span>PRODUCTION</span></div>
-        <div className="hero-architecture-corridor">CAYMAN ISLANDS <span aria-hidden="true">↔</span> CHINA <span aria-hidden="true">↔</span> CARIBBEAN</div>
-      </div>
-    </div>
+  <div className="approved-home">
+  <section className="approved-hero" aria-labelledby="approved-heading">
+    <img src="/images/approved/01-hero-apparel-studio.png" width="709" height="447" alt="Apparel studio with garments, sketches and fabric samples. Concept, strategy, sourcing, production, delivery." fetchPriority="high"/>
+    <div className="sr-only"><h1 id="approved-heading">Your vision. Our expertise. No boundaries.</h1><p>Your consulting, product development, global sourcing and manufacturing partner. Connecting businesses across apparel, automotive and construction with the expertise to move from concept to creation.</p></div>
+    <Link href="#what-we-do" className="approved-hotspot hero-services">Explore our services</Link><Link href="/contact" className="approved-hotspot hero-talk">Let's talk</Link>
   </section>
-  <div className="ticker"><div className="ticker-inner">CONSULTING <span>✳</span> PRODUCT DEVELOPMENT <span>✳</span> GLOBAL SOURCING <span>✳</span> MANUFACTURING <span>✳</span> APPAREL <span>✳</span> AUTOMOTIVE <span>✳</span> CONSTRUCTION <span>✳</span></div></div>
-  <section className="trust-bar shell" aria-label="CRÈME capabilities"><span>CAYMAN ROOTS</span><span>GLOBAL SUPPLIER NETWORKS</span><span>TAILORED PROJECT DEVELOPMENT</span><span>PRODUCTION COORDINATION</span></section>
-
-  <section className="section shell business-section" id="what-we-do">
-    <div className="section-heading"><div><p className="eyebrow">01 / OUR EXPERTISE</p><h2>ONE PARTNER.<br/><em>FOUR CAPABILITIES.</em></h2></div><p>CRÈME brings business thinking, product creation and international manufacturing coordination together under one roof.</p></div>
-    <div className="creme-pillar-grid">{pillars.map(p=><Link href={p.href} className="creme-pillar" key={p.number}><div className="creme-pillar-top"><span>{p.number} / {p.eyebrow}</span><span aria-hidden="true">↗</span></div><div><h3>{p.title}</h3><p>{p.description}</p></div><strong>{p.action} ↗</strong></Link>)}</div>
-  </section>
-
-  <section className="enterprise-statement creme-c2c-home"><div className="shell enterprise-statement-grid">
-    <div><p className="eyebrow">02 / GLOBAL SOURCING BY CRÈME</p><div className="creme-c2c-lockup"><span>C2C.</span><small>CHINA 2 CARIBBEAN</small></div><h2>GLOBAL MANUFACTURING.<br/><em>CARIBBEAN OPPORTUNITY.</em></h2><p className="statement-intro">Connect your business in the Cayman Islands or wider Caribbean with China-based sourcing opportunities. We help assess suppliers, product specifications, samples, production and freight coordination.</p><Link href="/sourcing#c2c" className="button button-cream">Explore C2C sourcing ↗</Link></div>
-    <div className="creme-c2c-panel" aria-label="C2C global trade services"><div className="creme-c2c-panel-top"><span>CRÈME / GLOBAL SOURCING</span><span>CHINA → CARIBBEAN</span></div><div className="creme-c2c-panel-center"><span>CHINA</span><span aria-hidden="true">↗</span><span>CARIBBEAN</span></div><div className="creme-c2c-panel-bottom"><div><span>01</span> DISCOVER</div><div><span>02</span> DEVELOP</div><div><span>03</span> PRODUCE</div><div><span>04</span> COORDINATE</div></div></div>
-  </div></section>
-
-  <section className="section shell creme-industries" id="industries">
-    <div className="section-heading"><div><p className="eyebrow">03 / INDUSTRIES WE SERVE</p><h2>BEYOND A SINGLE<br/><em>INDUSTRY.</em></h2></div><p>We started in apparel. Today, our sourcing and development model supports a wider range of business requirements.</p></div>
-    <div className="creme-industry-grid">{industries.map(industry=><article key={industry.number} className="creme-industry-card"><span className="eyebrow">{industry.number} / INDUSTRY</span><span className="industry-image-placeholder">Temporary image placeholder · {industry.title} original required</span><h3>{industry.title}</h3>{industry.category==="Automotive / parts"&&<p className="capky-positioning">CAPKY — An Automotive Brand by CRÈME.</p>}<p>{industry.description}</p>{industry.category==="Automotive / parts"&&<p className="capky-brand-note">CAPKY operates under CRÈME Products. <a href="https://capky.net" target="_blank" rel="noopener noreferrer">Visit CAPKY <span aria-hidden="true">↗</span><span className="sr-only"> (opens in a new tab)</span></a></p>}<strong>{industry.keywords}</strong><Link className="industry-inquiry" href={`/quote?service=Global%20sourcing&category=${encodeURIComponent(industry.category)}`}>Discuss {industry.title.toLowerCase()} <span aria-hidden="true">↗</span></Link></article>)}</div>
-    <Link href="/contact" className="section-link">Explore a new product category <span aria-hidden="true">↗</span></Link>
-  </section>
+  <section className="approved-pillars" id="what-we-do" aria-label="Our capabilities">{pillars.map((p,i)=><Link href={p.href} key={p.number}><svg aria-hidden="true" className="pillar-symbol" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">{i===0?<><path d="M11 23c0-5-5-7-5-12a10 10 0 0 1 20 0c0 5-5 7-5 12Z M12 26h8 M13 29h6 M16 23V12"/></>:i===1?<><path d="m16 2 13 7v14l-13 7L3 23V9Z M3 9l13 7 13-7 M16 16v14"/></>:i===2?<><circle cx="16" cy="16" r="14"/><ellipse cx="16" cy="16" rx="6" ry="14"/><path d="M2 16h28 M5 7q11 7 22 0 M5 25q11-7 22 0"/></>:<><path d="m12 2 1 4h6l1-4 5 3-2 4 3 5 4 1v5l-4 1-3 5 2 3-5 2-1-4h-6l-1 4-5-3 2-4-3-5-4-1v-5l4-1 3-5-2-3Z"/><circle cx="16" cy="17" r="6"/></>}</svg><h2>{["Business consulting","Product development","Global sourcing","Manufacturing coordination"][i]}</h2><p>{["Turn ideas into commercial success","From concept to market-ready products","Trusted supplier networks in Asia","Quality, efficiency and reliable delivery"][i]}</p></Link>)}</section>
+  <section className="approved-industries" id="industries"><div className="approved-industry-heading"><div><p className="eyebrow">INDUSTRIES WE SERVE —</p><h2>DIFFERENT INDUSTRIES.<br/><em>A STRONGER TOMORROW.</em></h2></div><p>Specialized expertise across key industries, with a global network that turns opportunity into reality.</p></div><div className="approved-industry-grid">{industries.map((industry,i)=><Link key={industry.number} href={`/quote?service=Global%20sourcing&category=${encodeURIComponent(industry.category)}`} aria-label={`Discuss ${industry.title.toLowerCase()}`}><img src={`/images/approved/0${i+2}-industry-${["apparel","automotive","construction"][i]}.png`} width={i===1?222:221} height="198" alt={`${industry.title}. ${industry.description}`} loading="lazy"/></Link>)}</div></section>
+  <section className="approved-c2c" aria-label="C2C — China 2 Caribbean"><img src="/images/approved/05-c2c-container-ship.png" width="709" height="316" loading="lazy" alt="C2C — China 2 Caribbean. A stronger supply chain for a brighter Caribbean. Leveraging global manufacturing capabilities to bring high-quality products and greater opportunities to the Caribbean. Container ship on the China to Caribbean route."/><Link className="approved-hotspot c2c-more" href="/sourcing#c2c">Learn more about C2C</Link></section>
+  <section className="approved-services"><div className="approved-services-heading"><h2 className="eyebrow">OUR SERVICES —</h2><Link href="/services">VIEW ALL SERVICES →</Link></div><div className="approved-service-grid">{[{image:"06-service-consulting.png",title:"Consulting",href:pillars[0].href},{image:"07-service-product-development.png",title:"Product development",href:"/services"},{image:"08-service-manufacturing.png",title:"Sourcing & manufacturing",href:"/sourcing#c2c"}].map((service,i)=><Link key={service.image} href={service.href}><img src={`/images/approved/${service.image}`} width="206" height="87" loading="lazy" alt={["Business consulting meeting","Garment sketches and material development","Apparel manufacturing workshop"][i]}/><div><small>0{i+1}</small><h3>{service.title}</h3></div></Link>)}</div></section>
+  </div>
+  <aside className="shell approved-capky"><p className="capky-positioning">CAPKY — An Automotive Brand by CRÈME.</p><p>CAPKY operates under CRÈME Products, supporting automotive parts, accessories, product sourcing and supplier coordination for Cayman Islands and Caribbean businesses. <a href="https://capky.net" target="_blank" rel="noopener noreferrer">Visit CAPKY ↗<span className="sr-only"> (opens in a new tab)</span></a></p></aside>
 
   <section className="section shell procurement-spotlight creme-procurement"><div className="spotlight-mark" aria-hidden="true">C/</div><div><p className="eyebrow">04 / PROFESSIONAL PROCUREMENT</p><h2>FROM SPECIFICATION<br/><em>TO EXECUTION.</em></h2><p>Product briefs, supplier comparisons, itemized quotations and purchasing documentation for business and institutional requirements.</p><Link href="/procurement" className="button button-dark">Explore procurement ↗</Link></div></section>
 
