@@ -6,7 +6,7 @@ import {ownerEmail,customerEmail} from "@/lib/rfq-email";
 
 export const runtime="nodejs";
 const allowedServices = new Set([...services.map(s=>s.title),"Not sure yet"]);
-const sourcingCategories=new Set(["Corporate / office","Promotional merchandise","Apparel / uniforms","Packaging / displays","Hospitality / facilities","Other / specialty product"]);
+const sourcingCategories=new Set(["Corporate / office","Promotional merchandise","Apparel / uniforms","Automotive / parts","Construction / building materials","Packaging / displays","Hospitality / facilities","Other / specialty product"]);
 const str=(v:unknown,max=1000)=>typeof v==="string"?v.trim().slice(0,max):"";
 const MAX_BODY=3100000;
 type Attachment={filename:string;content:string};
