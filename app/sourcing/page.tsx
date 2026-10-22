@@ -9,7 +9,7 @@ const groups=[
   {label:"03 / CONSTRUCTION",title:"Materials & components",description:"Building materials, architectural products, metal profiles, hardware and construction procurement requirements."},
   {label:"04 / CORPORATE & HOSPITALITY",title:"Everyday business supply",description:"Office essentials, promotional merchandise, hospitality products, worksite items and branded corporate kits."},
   {label:"05 / CUSTOM PRODUCTS",title:"Made to specification",description:"Packaging, accessories, fabricated products, prototypes and other goods developed around your requirements."},
-  {label:"06 / SOMETHING ELSE",title:"Bring us the challenge",description:"Have a sample, specification sheet or product link? Tell us what you need and we'll assess viable options."}
+  {label:"06 / SPECIALTY SOURCING",title:"Bring us the challenge",description:"Have a sample, specification sheet or product link? Tell us what you need and we'll assess viable options."}
 ];
 export default function SourcingPage(){return <>
   <section className="subhero shell enterprise-subhero"><p className="eyebrow">GLOBAL SOURCING / 03</p><h1>NEED IT?<br/><em>LET'S FIND A WAY.</em></h1><p>One point of contact for custom and bulk product sourcing. Share what you're looking for, and CRÈME can review available manufacturing options, costs and delivery requirements.</p><div className="page-actions"><Link href="#sourcing-inquiry" className="button button-dark">Submit a sourcing inquiry ↗</Link><Link href="/procurement" className="text-link">How purchasing works ↗</Link></div></section>
