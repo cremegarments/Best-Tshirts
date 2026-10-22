@@ -27,12 +27,12 @@ export function SourcingForm(){
       <label>BUSINESS / ORGANIZATION<input type="text" name="company" maxLength={120} autoComplete="organization" placeholder="Company name"/></label>
       <label>BUSINESS EMAIL <b>*</b><input type="email" name="email" required maxLength={180} autoComplete="email" placeholder="you@company.com"/></label>
       <label>PHONE / WHATSAPP<input type="tel" name="phone" maxLength={60} autoComplete="tel" placeholder="Include country code"/></label>
-      <label>PRODUCT CATEGORY <b>*</b><select name="category" defaultValue="" required><option value="" disabled>Choose a category</option><option>Corporate / office</option><option>Promotional merchandise</option><option>Apparel / uniforms</option><option>Packaging / displays</option><option>Hospitality / facilities</option><option>Other / specialty product</option></select></label>
+      <label>PRODUCT CATEGORY <b>*</b><select name="category" defaultValue="" required><option value="" disabled>Choose a category</option><option>Corporate / office</option><option>Promotional merchandise</option><option>Apparel / uniforms</option><option>Automotive / parts</option><option>Construction / building materials</option><option>Packaging / displays</option><option>Hospitality / facilities</option><option>Other / specialty product</option></select></label>
       <label>ESTIMATED QUANTITY <b>*</b><input type="number" name="quantity" min={1} max={100000} required placeholder="e.g. 300"/></label>
       <label>MAX. TARGET BUDGET (KYD)<input name="budget" inputMode="decimal" placeholder="Optional amount in CI$" maxLength={30}/></label>
       <label>NEEDED BY<input name="deadline" type="date"/></label>
       <label>REFERENCE LINK<input type="url" name="artwork" maxLength={1000} placeholder="https://product-link..."/></label>
-      <label>DELIVERY AREA<input type="text" name="delivery" maxLength={120} placeholder="e.g. George Town, Grand Cayman"/></label>
+      <label>DELIVERY DESTINATION<input type="text" name="delivery" maxLength={120} placeholder="e.g. George Town, Grand Cayman"/></label>
     </div>
     <label>PRODUCT DESCRIPTION & SPECIFICATIONS <b>*</b><textarea name="details" required maxLength={4000} rows={6} placeholder="What is the product? Include measurements, materials, colors, branding, quality expectations and any special requirements."/></label>
     <label className="consent"><input name="consent" type="checkbox" required/> <span>I agree to be contacted about this inquiry. Availability, specifications, minimum orders, landed pricing and import eligibility will be reviewed before a quotation is confirmed.</span></label>
