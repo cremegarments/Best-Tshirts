@@ -1,0 +1,673 @@
+{
+  "results": [
+    {
+      "width": 320,
+      "route": "/",
+      "status": 200,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fhero-cross-industry.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-manufacturing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fautomotive.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fconstruction.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fc2c-shipping.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-consulting.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-product-development.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-manufacturing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-automotive-sourcing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-quality-control.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-logistics.webp&w=3840&q=75",
+          "loaded": true
+        }
+      ],
+      "h1": "YOUR VISION.OUR EXPERTISE.NO BOUNDARIES."
+    },
+    {
+      "width": 320,
+      "route": "/automotive",
+      "status": 200,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fautomotive.webp&w=3840&q=75",
+          "loaded": true
+        }
+      ],
+      "h1": "PRECISION.BEYOND BORDERS."
+    },
+    {
+      "width": 320,
+      "route": "/industries",
+      "status": 200,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-manufacturing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fautomotive.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fconstruction.webp&w=3840&q=75",
+          "loaded": true
+        }
+      ],
+      "h1": "DIFFERENT INDUSTRIES.A STRONGER TOMORROW."
+    },
+    {
+      "width": 320,
+      "route": "/services",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "FROM CONCEPTTO CREATION."
+    },
+    {
+      "width": 320,
+      "route": "/sourcing",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "NEED IT?LET'S FIND A WAY."
+    },
+    {
+      "width": 320,
+      "route": "/procurement",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "PROCUREMENT.WITHOUT THE GUESSWORK."
+    },
+    {
+      "width": 320,
+      "route": "/corporate",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "MERCHANDISEMEANS BUSINESS."
+    },
+    {
+      "width": 320,
+      "route": "/corporate/request",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "YOUR BUSINESS.OUR REACH."
+    },
+    {
+      "width": 320,
+      "route": "/quote",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "TELL USWHAT YOU NEED."
+    },
+    {
+      "width": 320,
+      "route": "/contact",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "LET'S TALKBUSINESS."
+    },
+    {
+      "width": 320,
+      "route": "/about",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "ROOTED HERE.BUILT TO REACH FURTHER."
+    },
+    {
+      "width": 320,
+      "route": "/how-it-works",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "NO GUESSWORK.JUST GOOD WORK."
+    },
+    {
+      "width": 320,
+      "route": "/work",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "MADE TO BESEEN. AND WORN."
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "status": 200,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fhero-cross-industry.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-manufacturing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fautomotive.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fconstruction.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fc2c-shipping.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-consulting.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-product-development.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-manufacturing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-automotive-sourcing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-quality-control.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-logistics.webp&w=3840&q=75",
+          "loaded": true
+        }
+      ],
+      "h1": "YOUR VISION.OUR EXPERTISE.NO BOUNDARIES."
+    },
+    {
+      "width": 390,
+      "route": "/automotive",
+      "status": 200,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fautomotive.webp&w=3840&q=75",
+          "loaded": true
+        }
+      ],
+      "h1": "PRECISION.BEYOND BORDERS."
+    },
+    {
+      "width": 390,
+      "route": "/industries",
+      "status": 200,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-manufacturing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fautomotive.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fconstruction.webp&w=3840&q=75",
+          "loaded": true
+        }
+      ],
+      "h1": "DIFFERENT INDUSTRIES.A STRONGER TOMORROW."
+    },
+    {
+      "width": 390,
+      "route": "/services",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "FROM CONCEPTTO CREATION."
+    },
+    {
+      "width": 390,
+      "route": "/sourcing",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "NEED IT?LET'S FIND A WAY."
+    },
+    {
+      "width": 390,
+      "route": "/procurement",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "PROCUREMENT.WITHOUT THE GUESSWORK."
+    },
+    {
+      "width": 390,
+      "route": "/corporate",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "MERCHANDISEMEANS BUSINESS."
+    },
+    {
+      "width": 390,
+      "route": "/corporate/request",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "YOUR BUSINESS.OUR REACH."
+    },
+    {
+      "width": 390,
+      "route": "/quote",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "TELL USWHAT YOU NEED."
+    },
+    {
+      "width": 390,
+      "route": "/contact",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "LET'S TALKBUSINESS."
+    },
+    {
+      "width": 390,
+      "route": "/about",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "ROOTED HERE.BUILT TO REACH FURTHER."
+    },
+    {
+      "width": 390,
+      "route": "/how-it-works",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "NO GUESSWORK.JUST GOOD WORK."
+    },
+    {
+      "width": 390,
+      "route": "/work",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "MADE TO BESEEN. AND WORN."
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "status": 200,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fhero-cross-industry.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-manufacturing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fautomotive.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fconstruction.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fc2c-shipping.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-consulting.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-product-development.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-manufacturing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-automotive-sourcing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-quality-control.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-logistics.webp&w=3840&q=75",
+          "loaded": true
+        }
+      ],
+      "h1": "YOUR VISION.OUR EXPERTISE.NO BOUNDARIES."
+    },
+    {
+      "width": 768,
+      "route": "/automotive",
+      "status": 200,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fautomotive.webp&w=3840&q=75",
+          "loaded": true
+        }
+      ],
+      "h1": "PRECISION.BEYOND BORDERS."
+    },
+    {
+      "width": 768,
+      "route": "/industries",
+      "status": 200,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-manufacturing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fautomotive.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fconstruction.webp&w=3840&q=75",
+          "loaded": true
+        }
+      ],
+      "h1": "DIFFERENT INDUSTRIES.A STRONGER TOMORROW."
+    },
+    {
+      "width": 768,
+      "route": "/services",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "FROM CONCEPTTO CREATION."
+    },
+    {
+      "width": 768,
+      "route": "/sourcing",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "NEED IT?LET'S FIND A WAY."
+    },
+    {
+      "width": 768,
+      "route": "/procurement",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "PROCUREMENT.WITHOUT THE GUESSWORK."
+    },
+    {
+      "width": 768,
+      "route": "/corporate",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "MERCHANDISEMEANS BUSINESS."
+    },
+    {
+      "width": 768,
+      "route": "/corporate/request",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "YOUR BUSINESS.OUR REACH."
+    },
+    {
+      "width": 768,
+      "route": "/quote",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "TELL USWHAT YOU NEED."
+    },
+    {
+      "width": 768,
+      "route": "/contact",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "LET'S TALKBUSINESS."
+    },
+    {
+      "width": 768,
+      "route": "/about",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "ROOTED HERE.BUILT TO REACH FURTHER."
+    },
+    {
+      "width": 768,
+      "route": "/how-it-works",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "NO GUESSWORK.JUST GOOD WORK."
+    },
+    {
+      "width": 768,
+      "route": "/work",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "MADE TO BESEEN. AND WORN."
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "status": 200,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fhero-cross-industry.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-manufacturing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fautomotive.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fconstruction.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fc2c-shipping.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-consulting.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-product-development.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-manufacturing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-automotive-sourcing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-quality-control.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-logistics.webp&w=3840&q=75",
+          "loaded": true
+        }
+      ],
+      "h1": "YOUR VISION.OUR EXPERTISE.NO BOUNDARIES."
+    },
+    {
+      "width": 1440,
+      "route": "/automotive",
+      "status": 200,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fautomotive.webp&w=3840&q=75",
+          "loaded": true
+        }
+      ],
+      "h1": "PRECISION.BEYOND BORDERS."
+    },
+    {
+      "width": 1440,
+      "route": "/industries",
+      "status": 200,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fservice-manufacturing.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fautomotive.webp&w=3840&q=75",
+          "loaded": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fapproved%2Fconstruction.webp&w=3840&q=75",
+          "loaded": true
+        }
+      ],
+      "h1": "DIFFERENT INDUSTRIES.A STRONGER TOMORROW."
+    },
+    {
+      "width": 1440,
+      "route": "/services",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "FROM CONCEPTTO CREATION."
+    },
+    {
+      "width": 1440,
+      "route": "/sourcing",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "NEED IT?LET'S FIND A WAY."
+    },
+    {
+      "width": 1440,
+      "route": "/procurement",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "PROCUREMENT.WITHOUT THE GUESSWORK."
+    },
+    {
+      "width": 1440,
+      "route": "/corporate",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "MERCHANDISEMEANS BUSINESS."
+    },
+    {
+      "width": 1440,
+      "route": "/corporate/request",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "YOUR BUSINESS.OUR REACH."
+    },
+    {
+      "width": 1440,
+      "route": "/quote",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "TELL USWHAT YOU NEED."
+    },
+    {
+      "width": 1440,
+      "route": "/contact",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "LET'S TALKBUSINESS."
+    },
+    {
+      "width": 1440,
+      "route": "/about",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "ROOTED HERE.BUILT TO REACH FURTHER."
+    },
+    {
+      "width": 1440,
+      "route": "/how-it-works",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "NO GUESSWORK.JUST GOOD WORK."
+    },
+    {
+      "width": 1440,
+      "route": "/work",
+      "status": 200,
+      "overflow": false,
+      "images": [],
+      "h1": "MADE TO BESEEN. AND WORN."
+    }
+  ],
+  "errors": []
+}

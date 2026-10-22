@@ -3,11 +3,15 @@ import {useState, type FormEvent} from "react";
 import {useSearchParams} from "next/navigation";
 import {services,site} from "@/lib/site";
 
+const sourcingCategories = ["Corporate / office","Promotional merchandise","Apparel / uniforms","Automotive / parts","Construction / building materials","Packaging / displays","Hospitality / facilities","Other / specialty product"];
+
 type Status = "idle"|"sending"|"success"|"error";
 export function QuoteForm() {
   const params = useSearchParams();
   const selectedService = params.get("service") || "";
+  const selectedCategory = params.get("category") || "";
   const [serviceChoice,setServiceChoice] = useState(services.some(s=>s.title===selectedService)?selectedService:"");
+  const consultative = serviceChoice==="Business consulting" || serviceChoice==="Brand & product development";
   const [status,setStatus] = useState<Status>("idle");
   const [message,setMessage] = useState("");
   async function submit(event:FormEvent<HTMLFormElement>) {
@@ -31,13 +35,13 @@ export function QuoteForm() {
     <label>EMAIL ADDRESS <b>*</b><input name="email" type="email" placeholder="you@example.com" autoComplete="email" maxLength={180} required/></label>
     <label>PHONE / WHATSAPP<input name="phone" type="tel" placeholder="Include country code" autoComplete="tel" maxLength={60}/></label>
     <label>SERVICE <b>*</b><select name="service" required value={serviceChoice} onChange={event=>setServiceChoice(event.target.value)}><option value="" disabled>Choose a service</option>{services.map(s=><option key={s.number} value={s.title}>{s.title}</option>)}<option value="Not sure yet">Not sure yet</option></select></label>
-    {serviceChoice==="Global sourcing"&&<label>PRODUCT CATEGORY <b>*</b><select name="category" required defaultValue=""><option value="" disabled>Select a category</option>{["Corporate / office","Promotional merchandise","Apparel / uniforms","Packaging / displays","Hospitality / facilities","Other / specialty product"].map(c=><option value={c} key={c}>{c}</option>)}</select></label>}
-    <label>ESTIMATED QUANTITY <b>*</b><input name="quantity" type="number" placeholder="e.g. 150" min={1} max={100000} required/></label>
+    {serviceChoice==="Global sourcing"&&<label>PRODUCT CATEGORY <b>*</b><select name="category" required defaultValue={sourcingCategories.includes(selectedCategory)?selectedCategory:""}><option value="" disabled>Select a category</option>{sourcingCategories.map(c=><option value={c} key={c}>{c}</option>)}</select></label>}
+    <label>ESTIMATED QUANTITY {consultative?"(IF APPLICABLE)":<b>*</b>}<input name="quantity" type="number" placeholder={consultative?"Optional":"e.g. 150"} min={1} max={100000} required={!consultative}/></label>
     <label>TARGET BUDGET (KYD)<input name="budget" inputMode="decimal" maxLength={30} placeholder="Optional, CI$"/></label>
     <label>NEEDED BY<input name="deadline" type="date"/></label>
     <label>ARTWORK / REFERENCE LINK<input name="artwork" type="url" placeholder="https://..." maxLength={1000}/></label>
     <label>DELIVERY AREA<input name="delivery" type="text" placeholder="e.g. George Town" maxLength={120}/></label></div>
-    <label>PROJECT DETAILS <b>*</b><textarea name="details" rows={5} maxLength={4000} placeholder="Tell us about the garments, colors, sizes, printing positions, design and anything else we should know." required/></label>
+    <label>PROJECT DETAILS <b>*</b><textarea name="details" rows={5} maxLength={4000} placeholder="Describe your product or business requirement, dimensions, specifications, budget, destination and any reference materials." required/></label>
     <label className="consent"><input type="checkbox" name="consent" required/> <span>I agree to be contacted about this project. Final pricing and lead times are confirmed after reviewing specifications.</span></label>
     <div className="honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabIndex={-1} autoComplete="off"/></label></div>
     {status === "success" && <p className="form-feedback form-success" role="status">{message}</p>}
