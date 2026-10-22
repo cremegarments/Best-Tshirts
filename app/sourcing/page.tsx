@@ -5,7 +5,7 @@ import {SourcingForm} from "./sourcing-form";
 export const metadata:Metadata={title:"C2C | China 2 Caribbean — Global Sourcing",description:"C2C by CRÈME helps Cayman and Caribbean businesses explore China-based suppliers, product development, manufacturing and delivery coordination."};
 const groups=[
   {label:"01 / APPAREL & BRANDS",title:"Apparel & merchandise",description:"Private-label garments, workwear, trims, accessories, packaging and brand-ready product development."},
-  {label:"02 / AUTOMOTIVE",title:"Parts & accessories",description:"Automotive products, aftermarket components, equipment and specification-based sourcing inquiries."},
+  {label:"02 / AUTOMOTIVE",title:"Parts & accessories",description:"Automotive parts, accessories, product sourcing and supplier coordination for Cayman Islands and Caribbean businesses through CAPKY, an automotive brand under CRÈME Products."},
   {label:"03 / CONSTRUCTION",title:"Materials & components",description:"Building materials, architectural products, metal profiles, hardware and construction procurement requirements."},
   {label:"04 / CORPORATE & HOSPITALITY",title:"Everyday business supply",description:"Office essentials, promotional merchandise, hospitality products, worksite items and branded corporate kits."},
   {label:"05 / CUSTOM PRODUCTS",title:"Made to specification",description:"Packaging, accessories, fabricated products, prototypes and other goods developed around your requirements."},
@@ -15,7 +15,7 @@ export default function SourcingPage(){return <>
   <section className="subhero shell enterprise-subhero"><p className="eyebrow">GLOBAL SOURCING / 03</p><h1>NEED IT?<br/><em>LET'S FIND A WAY.</em></h1><p>One point of contact for custom and bulk product sourcing. Share what you're looking for, and CRÈME can review available manufacturing options, costs and delivery requirements.</p><div className="page-actions"><Link href="#sourcing-inquiry" className="button button-dark">Submit a sourcing inquiry ↗</Link><Link href="/procurement" className="text-link">How purchasing works ↗</Link></div></section>
   <section id="c2c" className="c2c-feature shell" aria-labelledby="c2c-heading">
     <div className="c2c-feature-heading">
-      <p className="eyebrow">A CRÈME SOURCING INITIATIVE</p>
+      <p className="eyebrow">CRÈME’S SOURCING SERVICE</p>
       <strong className="c2c-wordmark">C2C<span>.</span></strong>
       <h2 id="c2c-heading">CHINA 2 CARIBBEAN</h2>
       <p className="c2c-tagline">Global manufacturing. Caribbean opportunity.</p>

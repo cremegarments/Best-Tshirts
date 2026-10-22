@@ -10,7 +10,7 @@ const pillars = [
 
 const industries = [
   {number:"01",title:"Apparel & merchandise",description:"Private-label collections, uniforms, promotional products, packaging and branded goods.",category:"Apparel / uniforms",keywords:"FASHION / UNIFORMS / BRANDING"},
-  {number:"02",title:"Automotive",description:"Product and parts sourcing, aftermarket accessories, supplier research and manufacturing inquiries.",category:"Automotive / parts",keywords:"PARTS / ACCESSORIES / SOURCING"},
+  {number:"02",title:"Automotive",description:"Automotive parts, accessories, product sourcing and supplier coordination for Cayman Islands and Caribbean businesses.",category:"Automotive / parts",keywords:"PARTS / ACCESSORIES / SOURCING"},
   {number:"03",title:"Construction",description:"Building products, architectural components, specifications and supplier coordination.",category:"Construction / building materials",keywords:"MATERIALS / COMPONENTS / PROCUREMENT"}
 ];
 
@@ -23,7 +23,8 @@ export default function Home(){return <>
       <div className="hero-actions"><Link href="#what-we-do" className="button button-dark">Explore our services <span aria-hidden="true">↗</span></Link><Link href="/contact" className="text-link">Let's talk <span aria-hidden="true">↗</span></Link></div>
       <div className="hero-small"><span>EST. 2015 · CAYMAN ISLANDS</span><span>STRATEGY · SOURCING · PRODUCTION</span></div>
     </div>
-    <div className="hero-architecture" aria-label="CRÈME connects strategy, product development and global production">
+    <div className="hero-architecture" aria-label="Temporary image placeholder: approved homepage hero photograph required">
+      <p className="image-placeholder-label">TEMPORARY IMAGE PLACEHOLDER · HERO ORIGINAL REQUIRED</p>
       <div className="hero-architecture-top"><span>CRÈME / INTERNATIONAL</span><span>01 — 04</span></div>
       <div className="hero-architecture-rings" aria-hidden="true"><span/><span/><span/></div>
       <div className="hero-architecture-mark" aria-hidden="true">C<span>/</span></div>
@@ -49,7 +50,7 @@ export default function Home(){return <>
 
   <section className="section shell creme-industries" id="industries">
     <div className="section-heading"><div><p className="eyebrow">03 / INDUSTRIES WE SERVE</p><h2>BEYOND A SINGLE<br/><em>INDUSTRY.</em></h2></div><p>We started in apparel. Today, our sourcing and development model supports a wider range of business requirements.</p></div>
-    <div className="creme-industry-grid">{industries.map(industry=><article key={industry.number} className="creme-industry-card"><span className="eyebrow">{industry.number} / INDUSTRY</span><h3>{industry.title}</h3><p>{industry.description}</p><strong>{industry.keywords}</strong><Link className="industry-inquiry" href={`/quote?service=Global%20sourcing&category=${encodeURIComponent(industry.category)}`}>Discuss {industry.title.toLowerCase()} <span aria-hidden="true">↗</span></Link></article>)}</div>
+    <div className="creme-industry-grid">{industries.map(industry=><article key={industry.number} className="creme-industry-card"><span className="eyebrow">{industry.number} / INDUSTRY</span><span className="industry-image-placeholder">Temporary image placeholder · {industry.title} original required</span><h3>{industry.title}</h3>{industry.category==="Automotive / parts"&&<p className="capky-positioning">CAPKY — An Automotive Brand by CRÈME.</p>}<p>{industry.description}</p>{industry.category==="Automotive / parts"&&<p className="capky-brand-note">CAPKY operates under CRÈME Products. <a href="https://capky.net" target="_blank" rel="noopener noreferrer">Visit CAPKY <span aria-hidden="true">↗</span><span className="sr-only"> (opens in a new tab)</span></a></p>}<strong>{industry.keywords}</strong><Link className="industry-inquiry" href={`/quote?service=Global%20sourcing&category=${encodeURIComponent(industry.category)}`}>Discuss {industry.title.toLowerCase()} <span aria-hidden="true">↗</span></Link></article>)}</div>
     <Link href="/contact" className="section-link">Explore a new product category <span aria-hidden="true">↗</span></Link>
   </section>
 
