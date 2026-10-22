@@ -6,6 +6,7 @@ import {ownerEmail,customerEmail} from "@/lib/rfq-email";
 
 export const runtime="nodejs";
 const allowedServices = new Set([...services.map(s=>s.title),"Not sure yet"]);
+const consultativeServices=new Set(["Business consulting","Brand & product development"]);
 const sourcingCategories=new Set(["Corporate / office","Promotional merchandise","Apparel / uniforms","Automotive / parts","Construction / building materials","Packaging / displays","Hospitality / facilities","Other / specialty product"]);
 const str=(v:unknown,max=1000)=>typeof v==="string"?v.trim().slice(0,max):"";
 const MAX_BODY=3100000;
@@ -40,7 +41,7 @@ export async function POST(request:Request){
   const service=str(data.service,120),details=str(data.details,4000),quantity=Number(data.quantity);
   const deadline=str(data.deadline,40),artwork=str(data.artwork,1000),category=str(data.category,100);
   const delivery=str(data.delivery,120),budget=str(data.budget,30);
-  if(!name||!/^\S+@\S+\.\S+$/.test(email)||!allowedServices.has(service)||!Number.isInteger(quantity)||quantity<1||quantity>100000||!details||data.consent!=="on"||(service==="Global sourcing"&&!sourcingCategories.has(category)))
+  if(!name||!/^\S+@\S+\.\S+$/.test(email)||!allowedServices.has(service)||!Number.isInteger(quantity)||quantity<0||(!consultativeServices.has(service)&&quantity<1)||quantity>100000||!details||data.consent!=="on"||(service==="Global sourcing"&&!sourcingCategories.has(category)))
    return NextResponse.json({message:"Please complete all required fields correctly."},{status:400});
   if(artwork){try{const url=new URL(artwork);if(!["https:","http:"].includes(url.protocol))throw Error();}catch{return NextResponse.json({message:"Please enter a valid reference link."},{status:400})}}
   if(budget&&(!/^\d{1,9}(\.\d{1,2})?$/.test(budget)||Number(budget)<=0))return NextResponse.json({message:"Enter a valid KYD budget, or leave it blank."},{status:400});
@@ -54,7 +55,7 @@ export async function POST(request:Request){
   catch{return NextResponse.json({message:"Unable to accept inquiries at this time. Please email CRÈME directly."},{status:503});}
   const ref=randomUUID();
   const item:Rfq={id:ref,createdAt:new Date().toISOString(),status:"New",name,email,company,phone,service,details,quantity,deadline,artwork,category,delivery,budget,attachmentName:attachment?.filename};
-  const text=["New CRÈME business inquiry",`Reference: ${ref.slice(0,8).toUpperCase()}`,`Name: ${name}`,`Company: ${company}`,`Email: ${email}`,`Phone: ${phone}`,`Service: ${service}`,`Product category: ${category}`,`Quantity: ${quantity}`,`Target budget (KYD): ${budget?`CI$${budget}`:"Not supplied"}`,`Needed by: ${deadline||"Not specified"}`,`Delivery area: ${delivery||"Not specified"}`,`Reference: ${artwork||"Not supplied"}`,`Attachment: ${attachment?.filename||"Not supplied"}`,"","Project details:",details].join("\n");
+  const text=["New CRÈME business inquiry",`Reference: ${ref.slice(0,8).toUpperCase()}`,`Name: ${name}`,`Company: ${company}`,`Email: ${email}`,`Phone: ${phone}`,`Service: ${service}`,`Product category: ${category}`,`Quantity: ${quantity===0?"Not applicable":quantity}`,`Target budget (KYD): ${budget?`CI$${budget}`:"Not supplied"}`,`Needed by: ${deadline||"Not specified"}`,`Delivery area: ${delivery||"Not specified"}`,`Reference: ${artwork||"Not supplied"}`,`Attachment: ${attachment?.filename||"Not supplied"}`,"","Project details:",details].join("\n");
   const emailBody={from,to:[to],reply_to:email,subject:`CRÈME inquiry [${ref.slice(0,8).toUpperCase()}]: ${service} — ${name}`,html:ownerEmail(item),text,...(attachment?{attachments:[attachment]}:{})};
   const response=await fetch("https://api.resend.com/emails",{method:"POST",headers:{Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify(emailBody),cache:"no-store"});
   if(!response.ok){console.error("Owner email delivery failure",response.status);return NextResponse.json({message:"We couldn't deliver your request. Please email info@cremeky.com."},{status:502});}
