@@ -8,6 +8,7 @@ export function QuoteForm() {
   const params = useSearchParams();
   const selectedService = params.get("service") || "";
   const [serviceChoice,setServiceChoice] = useState(services.some(s=>s.title===selectedService)?selectedService:"");
+  const consultative = serviceChoice==="Business consulting" || serviceChoice==="Brand & product development";
   const [status,setStatus] = useState<Status>("idle");
   const [message,setMessage] = useState("");
   async function submit(event:FormEvent<HTMLFormElement>) {
@@ -32,7 +33,7 @@ export function QuoteForm() {
     <label>PHONE / WHATSAPP<input name="phone" type="tel" placeholder="Include country code" autoComplete="tel" maxLength={60}/></label>
     <label>SERVICE <b>*</b><select name="service" required value={serviceChoice} onChange={event=>setServiceChoice(event.target.value)}><option value="" disabled>Choose a service</option>{services.map(s=><option key={s.number} value={s.title}>{s.title}</option>)}<option value="Not sure yet">Not sure yet</option></select></label>
     {serviceChoice==="Global sourcing"&&<label>PRODUCT CATEGORY <b>*</b><select name="category" required defaultValue=""><option value="" disabled>Select a category</option>{["Corporate / office","Promotional merchandise","Apparel / uniforms","Automotive / parts","Construction / building materials","Packaging / displays","Hospitality / facilities","Other / specialty product"].map(c=><option value={c} key={c}>{c}</option>)}</select></label>}
-    <label>ESTIMATED QUANTITY <b>*</b><input name="quantity" type="number" placeholder="e.g. 150" min={1} max={100000} required/></label>
+    <label>ESTIMATED QUANTITY {consultative?"(IF APPLICABLE)":<b>*</b>}<input name="quantity" type="number" placeholder={consultative?"Optional":"e.g. 150"} min={1} max={100000} required={!consultative}/></label>
     <label>TARGET BUDGET (KYD)<input name="budget" inputMode="decimal" maxLength={30} placeholder="Optional, CI$"/></label>
     <label>NEEDED BY<input name="deadline" type="date"/></label>
     <label>ARTWORK / REFERENCE LINK<input name="artwork" type="url" placeholder="https://..." maxLength={1000}/></label>
