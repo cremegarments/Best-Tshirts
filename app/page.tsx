@@ -2,16 +2,16 @@ import Link from "next/link";
 import {process} from "@/lib/site";
 
 const pillars = [
-  {number:"01",eyebrow:"ADVISE",title:"Business consulting",description:"Practical guidance on product strategy, supplier requirements, commercial planning and the route from idea to market.",href:"/contact",action:"Discuss your project"},
+  {number:"01",eyebrow:"ADVISE",title:"Business consulting",description:"Practical guidance on product strategy, supplier requirements, commercial planning and the route from idea to market.",href:"/quote?service=Business%20consulting",action:"Discuss your project"},
   {number:"02",eyebrow:"DEVELOP",title:"Brand & product development",description:"Turn an idea, reference or specification into a product brief, brand-ready concept and production requirements.",href:"/services",action:"Explore development"},
   {number:"03",eyebrow:"CONNECT",title:"Global sourcing",description:"Explore suppliers and manufacturing options through our C2C — China 2 Caribbean sourcing initiative.",href:"/sourcing#c2c",action:"Discover C2C"},
   {number:"04",eyebrow:"DELIVER",title:"Manufacturing & production",description:"Coordinate quotations, samples, approved production, quality requirements and logistics with manufacturing partners.",href:"/services",action:"Explore production"}
 ];
 
 const industries = [
-  {number:"01",title:"Apparel & merchandise",description:"Private-label collections, uniforms, promotional products, packaging and branded goods.",keywords:"FASHION / UNIFORMS / BRANDING"},
-  {number:"02",title:"Automotive",description:"Product and parts sourcing, aftermarket accessories, supplier research and manufacturing inquiries.",keywords:"PARTS / ACCESSORIES / SOURCING"},
-  {number:"03",title:"Construction",description:"Building products, architectural components, specifications and supplier coordination.",keywords:"MATERIALS / COMPONENTS / PROCUREMENT"}
+  {number:"01",title:"Apparel & merchandise",description:"Private-label collections, uniforms, promotional products, packaging and branded goods.",category:"Apparel / uniforms",keywords:"FASHION / UNIFORMS / BRANDING"},
+  {number:"02",title:"Automotive",description:"Product and parts sourcing, aftermarket accessories, supplier research and manufacturing inquiries.",category:"Automotive / parts",keywords:"PARTS / ACCESSORIES / SOURCING"},
+  {number:"03",title:"Construction",description:"Building products, architectural components, specifications and supplier coordination.",category:"Construction / building materials",keywords:"MATERIALS / COMPONENTS / PROCUREMENT"}
 ];
 
 export default function Home(){return <>
@@ -19,7 +19,7 @@ export default function Home(){return <>
     <div className="hero-copy">
       <div className="eyebrow"><span className="online-dot"/> GLOBAL BUSINESS & MANUFACTURING SOLUTIONS</div>
       <h1>YOUR VISION.<br/>OUR EXPERTISE.<br/><span className="italic-word">NO BOUNDARIES.</span></h1>
-      <p>From business strategy and product development to global sourcing and manufacturing.</p>
+      <p>Your consulting, product development, global sourcing and manufacturing partner. Connecting businesses across apparel, automotive and construction with the expertise to move from concept to creation.</p>
       <div className="hero-actions"><Link href="#what-we-do" className="button button-dark">Explore our services <span aria-hidden="true">↗</span></Link><Link href="/contact" className="text-link">Let's talk <span aria-hidden="true">↗</span></Link></div>
       <div className="hero-small"><span>EST. 2015 · CAYMAN ISLANDS</span><span>STRATEGY · SOURCING · PRODUCTION</span></div>
     </div>
@@ -49,7 +49,7 @@ export default function Home(){return <>
 
   <section className="section shell creme-industries" id="industries">
     <div className="section-heading"><div><p className="eyebrow">03 / INDUSTRIES WE SERVE</p><h2>BEYOND A SINGLE<br/><em>INDUSTRY.</em></h2></div><p>We started in apparel. Today, our sourcing and development model supports a wider range of business requirements.</p></div>
-    <div className="creme-industry-grid">{industries.map(industry=><article key={industry.number} className="creme-industry-card"><span className="eyebrow">{industry.number} / INDUSTRY</span><h3>{industry.title}</h3><p>{industry.description}</p><strong>{industry.keywords}</strong></article>)}</div>
+    <div className="creme-industry-grid">{industries.map(industry=><article key={industry.number} className="creme-industry-card"><span className="eyebrow">{industry.number} / INDUSTRY</span><h3>{industry.title}</h3><p>{industry.description}</p><strong>{industry.keywords}</strong><Link className="industry-inquiry" href={`/quote?service=Global%20sourcing&category=${encodeURIComponent(industry.category)}`}>Discuss {industry.title.toLowerCase()} <span aria-hidden="true">↗</span></Link></article>)}</div>
     <Link href="/contact" className="section-link">Explore a new product category <span aria-hidden="true">↗</span></Link>
   </section>
 
