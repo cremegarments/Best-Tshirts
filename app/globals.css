@@ -106,3 +106,135 @@
 @media(max-width:1000px){.nav{display:none}.header-cta{margin-left:auto}.mobile-menu{display:block}.trust-bar{display:grid;grid-template-columns:repeat(2,1fr)}.division-grid{grid-template-columns:1fr 1fr}.division-card:nth-child(3){grid-column:1/-1}.enterprise-statement-grid{gap:32px}.audience-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.source-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sourcing-form-grid{gap:30px}.procurement-spotlight{padding:45px}.enterprise-dual{gap:40px}}
 @media(max-width:700px){.enterprise-hero h1{font-size:clamp(52px,12.3vw,87px);white-space:normal}.enterprise-hero .hero-small{padding-top:28px}.trust-bar{padding-top:20px;padding-bottom:20px;gap:18px 8px}.trust-bar span{font-size:9px}.business-section{padding-top:65px}.division-grid{grid-template-columns:1fr}.division-card:nth-child(3){grid-column:auto}.division-card{min-height:265px;padding:25px}.enterprise-statement{padding:65px 0}.enterprise-statement-grid{grid-template-columns:1fr}.sourcing-graphic{height:370px}.graphic-center{font-size:130px}.sourcing-graphic:before{width:310px;height:310px}.sourcing-graphic:after{width:215px;height:215px}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.category-item{min-height:155px;padding:18px;gap:40px}.category-item strong{font-size:14px}.procurement-spotlight{grid-template-columns:1fr;padding:30px;gap:0}.spotlight-mark{font-size:160px}.enterprise-subhero h1{font-size:clamp(44px,10.5vw,74px)}.enterprise-subhero{padding-bottom:58px}.business-audience{padding:65px 0}.enterprise-dual{grid-template-columns:1fr;padding-top:70px;padding-bottom:70px}.document-visual{transform:none;box-shadow:8px 8px 0 #d7d2c6}.source-category-grid{grid-template-columns:1fr}.source-category{min-height:200px}.sourcing-caveat{padding:65px 0}.sourcing-caveat-inner{grid-template-columns:1fr}.sourcing-form-grid{grid-template-columns:1fr}.sourcing-assist{padding:25px}.source-band .shell{gap:12px 8px}.source-band span{font-size:9px}.procurement-timeline-item{grid-template-columns:45px 1fr;gap:12px}.procurement-timeline-item p{grid-column:2}.procurement-dark{padding:65px 0}.procurement-dark-inner{grid-template-columns:1fr;gap:10px}.procurement-points{grid-template-columns:1fr 1fr;gap:18px}.procurement-points strong{font-size:10px}}
 @media(max-width:420px){.procurement-points{grid-template-columns:1fr}.division-card h3{font-size:29px}.trust-bar span{line-height:1.4}.graphic-chip{padding:9px 11px;font-size:10px}}
+
+
+/* CRÈME cross-industry review — architectural white / charcoal / silver system */
+:root{--cream:#f5f5f3;--paper:#f5f5f3;--ink:#20252a;--accent:#929ba3;--olive:#747f87;--line:#d4d9dd;--muted:#69747c}
+body{background:var(--paper);color:var(--ink)}
+::selection{background:#65717b;color:#fff}
+.header{background:#f8f8f6;border-bottom-color:#dce0e2}
+.brand{letter-spacing:-2.6px}
+.brand small{color:#66717a}
+.button-dark{background:#20252a;color:#fff}
+.button-dark:hover{background:#414b54}
+.button-cream{background:#f5f5f3;color:#20252a}
+.online-dot{background:#aeb7bf}
+.text-link:hover{color:#6b7883}
+.ticker{background:#20252a;color:#f5f5f3}
+.ticker span{color:#c8cdd1}
+.creme-new-hero{grid-template-columns:1.08fr .92fr;min-height:690px;padding-top:58px;padding-bottom:58px}
+.creme-new-hero .hero-copy{padding-right:20px}
+.creme-new-hero h1{font-size:clamp(42px,4.65vw,82px);line-height:1.035;letter-spacing:-.077em;margin:30px 0 26px;white-space:normal;font-weight:900}
+.creme-new-hero h1 .italic-word{font-size:.95em;letter-spacing:-.067em}
+.creme-new-hero .hero-copy>p{font-size:clamp(16px,1.55vw,21px);max-width:560px;color:#4d5962;line-height:1.55}
+.creme-new-hero .hero-actions{margin-top:32px;gap:28px}
+.creme-new-hero .hero-small{color:#66717b;gap:18px 28px}
+.hero-architecture{background:#232a30;color:#eef1f2;position:relative;min-height:585px;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;padding:28px;box-shadow:inset 0 0 0 1px #ffffff16}
+.hero-architecture:before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(25% - 1px),#ffffff12 calc(25% - 1px),#ffffff12 25%),repeating-linear-gradient(0deg,transparent 0,transparent 93px,#ffffff10 94px)}
+.hero-architecture-top,.hero-architecture-corridor,.hero-architecture-kicker{font-size:10px;font-weight:800;letter-spacing:1.5px}
+.hero-architecture-top{display:flex;justify-content:space-between;gap:15px;color:#cbd3d8}
+.hero-architecture-rings{pointer-events:none;position:absolute;inset:0;display:grid;place-items:center}
+.hero-architecture-rings span{position:absolute;width:min(76%,430px);aspect-ratio:1;border:1px solid #bec6cb50;border-radius:50%;transform:rotate(-19deg) scaleY(.74)}
+.hero-architecture-rings span:nth-child(2){width:min(60%,330px);transform:rotate(25deg) scaleY(.92)}
+.hero-architecture-rings span:nth-child(3){width:min(47%,260px);transform:rotate(-30deg) scaleY(.65)}
+.hero-architecture-mark{align-self:center;z-index:1;font-size:clamp(160px,20vw,320px);line-height:1;font-weight:900;letter-spacing:-.17em;text-shadow:0 18px 60px #0004}
+.hero-architecture-mark span{color:#c8cdd1;letter-spacing:-.1em}
+.hero-architecture-foot{z-index:1}
+.hero-architecture-kicker{display:block;color:#c8cdd1;margin-bottom:16px}
+.hero-architecture-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-left:1px solid #ffffff3b;border-top:1px solid #ffffff3b}
+.hero-architecture-grid span{padding:15px 12px;border-right:1px solid #ffffff3b;border-bottom:1px solid #ffffff3b;font-size:11px;font-weight:850;letter-spacing:1px}
+.hero-architecture-corridor{margin-top:23px;display:flex;justify-content:space-between;gap:8px;color:#aab5bc}
+.trust-bar{border-bottom:1px solid #d6dbde}
+.creme-pillar-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#c8cdd1;border:1px solid #c8cdd1}
+.creme-pillar{min-height:360px;background:#f7f8f7;padding:25px 22px;display:flex;flex-direction:column;justify-content:space-between;transition:background .2s,transform .2s}
+.creme-pillar:hover{background:#e9edef;transform:translateY(-3px)}
+.creme-pillar:nth-child(3){background:#dfe4e7}
+.creme-pillar:nth-child(4){background:#252d33;color:#f6f7f7}
+.creme-pillar:nth-child(4):hover{background:#3b454d}
+.creme-pillar-top{display:flex;justify-content:space-between;align-items:start;gap:10px;font-size:10px;font-weight:800;letter-spacing:.9px}
+.creme-pillar-top span:last-child{font-size:22px}
+.creme-pillar h3{font-size:clamp(24px,2.2vw,35px);line-height:1.06;letter-spacing:-.055em;margin:0 0 18px}
+.creme-pillar p{font-size:13px;line-height:1.65;margin:0;color:#59656d}
+.creme-pillar:nth-child(4) p{color:#d6dde1}
+.creme-pillar strong{font-size:10px;font-weight:850;letter-spacing:.7px;text-transform:uppercase}
+.creme-c2c-home{background:#222b31;color:#fff;padding:105px 0}
+.creme-c2c-home .enterprise-statement-grid{grid-template-columns:1fr 1fr;gap:60px}
+.creme-c2c-home h2{font-size:clamp(35px,3.6vw,60px);letter-spacing:-.063em;line-height:1.06;margin:28px 0}
+.creme-c2c-home h2 em{color:#bfc9cf}
+.creme-c2c-lockup{display:flex;flex-direction:column;align-items:start;margin-top:24px}
+.creme-c2c-lockup>span{font-size:clamp(80px,11vw,158px);line-height:.82;font-weight:950;letter-spacing:-.12em}
+.creme-c2c-lockup>small{font-size:11px;letter-spacing:2px;font-weight:800;margin-top:20px;color:#cbd2d7}
+.creme-c2c-panel{min-height:500px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #a6b2b950;background:radial-gradient(circle at 50% 45%,#76848e35 0,#76848e10 34%,transparent 62%),repeating-linear-gradient(90deg,transparent,transparent calc(25% - 1px),#bfcbd312 calc(25% - 1px),#bfcbd312 25%),#303a42;padding:26px}
+.creme-c2c-panel-top{display:flex;justify-content:space-between;gap:10px;font-size:10px;letter-spacing:1px;font-weight:800;color:#cbd5da}
+.creme-c2c-panel-center{display:flex;align-items:center;justify-content:center;gap:15px;font-size:clamp(21px,2.3vw,33px);font-weight:850;letter-spacing:-.06em;text-align:center}
+.creme-c2c-panel-center span:nth-child(2){font-size:68px;color:#c8cdd1}
+.creme-c2c-panel-bottom{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-left:1px solid #9cabb560;border-top:1px solid #9cabb560}
+.creme-c2c-panel-bottom div{padding:17px 12px;border-bottom:1px solid #9cabb560;border-right:1px solid #9cabb560;font-size:11px;font-weight:800;letter-spacing:1px}
+.creme-c2c-panel-bottom span{font-size:10px;color:#c8d1d7;margin-right:8px}
+.creme-industry-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.creme-industry-card{min-height:320px;background:#e7eaeb;border:1px solid #cfd5d8;padding:28px;display:flex;flex-direction:column;align-items:start}
+.creme-industry-card:nth-child(2){background:#dce1e4}.creme-industry-card:nth-child(3){background:#cfd7dc}
+.creme-industry-card h3{font-size:clamp(28px,2.8vw,44px);line-height:1.04;letter-spacing:-.06em;margin:auto 0 18px}
+.creme-industry-card p{font-size:14px;line-height:1.65;color:#47545e;max-width:360px}
+.creme-industry-card strong{font-size:10px;letter-spacing:1px;margin-top:12px}
+.creme-procurement{background:#e1e5e7}
+.creme-procurement .spotlight-mark{color:#6b7780}
+.creme-project-banner{background:#c8cdd1}
+.creme-project-banner h2{font-size:clamp(47px,6.2vw,95px)}
+/* C2C introduction on the global sourcing page */
+.c2c-feature{display:grid;grid-template-columns:1fr 1fr;gap:55px;padding-top:65px;padding-bottom:75px;border-bottom:1px solid var(--line)}
+.c2c-feature-heading{background:#242d33;color:#f9faf9;padding:45px;display:flex;flex-direction:column;justify-content:center;min-height:420px}
+.c2c-wordmark{font-size:clamp(94px,12vw,180px);line-height:.95;letter-spacing:-.115em;font-weight:950;margin:25px 0 18px}
+.c2c-wordmark span{color:#bdc7cd}
+.c2c-feature-heading h2{font-size:clamp(25px,2.75vw,42px);letter-spacing:-.055em;line-height:1.1;margin:0 0 18px}
+.c2c-tagline{font-size:16px;color:#c6d0d5;line-height:1.5;margin:0}
+.c2c-feature-copy{display:flex;flex-direction:column;align-items:start;justify-content:center;gap:20px}
+.c2c-feature-copy>p:first-child{font-size:clamp(19px,2vw,29px);line-height:1.45;letter-spacing:-.025em;margin:0}
+.c2c-capabilities{display:grid;grid-template-columns:1fr 1fr;width:100%;border-top:1px solid #c6cdd1;border-left:1px solid #c6cdd1}
+.c2c-capabilities span{font-size:10px;letter-spacing:.8px;font-weight:850;padding:16px 10px;border-bottom:1px solid #c6cdd1;border-right:1px solid #c6cdd1}
+.c2c-feature-copy .c2c-disclaimer{font-size:12px;color:#5a6670;line-height:1.6;margin:0}
+.source-category{background:#e9edef}.source-category:nth-child(3n + 2){background:#dce2e5}.source-category:nth-child(3n + 3){background:#d2d9dd}
+.source-category p{color:#4d5a63}
+.sourcing-caveat,.source-band{background:#242d33}
+.sourcing-assist,.quote-form{background:#e7ebed}
+@media(max-width:1170px){
+.creme-new-hero{grid-template-columns:1fr 1fr;gap:26px}
+.creme-new-hero h1{font-size:clamp(39px,4.6vw,65px)}
+.creme-pillar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.creme-pillar{min-height:315px}
+.creme-c2c-home .enterprise-statement-grid{gap:30px}
+.c2c-feature{gap:30px}
+.c2c-feature-heading{padding:32px}
+}
+@media(max-width:760px){
+.creme-new-hero{display:flex;flex-direction:column;gap:30px;padding-top:54px;padding-bottom:30px}
+.creme-new-hero h1{font-size:clamp(34px,8.9vw,62px);letter-spacing:-.07em}
+.creme-new-hero .hero-copy{padding-right:0}
+.creme-new-hero .hero-copy>p{font-size:16px}
+.hero-architecture{min-height:425px;padding:21px}
+.hero-architecture-mark{font-size:170px}
+.hero-architecture-top,.hero-architecture-corridor{font-size:8px}
+.hero-architecture-grid span{font-size:9px;padding:10px}
+.creme-pillar-grid{grid-template-columns:1fr}
+.creme-pillar{min-height:250px}
+.creme-pillar h3{font-size:30px}
+.creme-c2c-home{padding:70px 0}
+.creme-c2c-home .enterprise-statement-grid{grid-template-columns:1fr;gap:35px}
+.creme-c2c-home h2{font-size:40px}
+.creme-c2c-panel{min-height:345px;padding:20px}
+.creme-c2c-panel-center{font-size:26px}
+.creme-c2c-panel-center span:nth-child(2){font-size:40px}
+.creme-industry-grid{grid-template-columns:1fr}
+.creme-industry-card{min-height:230px}
+.creme-industry-card h3{font-size:34px}
+.c2c-feature{grid-template-columns:1fr;gap:30px;padding-top:35px;padding-bottom:55px}
+.c2c-feature-heading{min-height:330px;padding:30px}
+.c2c-wordmark{font-size:105px}
+.c2c-feature-copy>p:first-child{font-size:22px}
+.creme-project-banner h2{font-size:clamp(43px,10vw,70px)}
+}
+@media(max-width:380px){
+.creme-new-hero h1{font-size:32px}
+.c2c-capabilities{grid-template-columns:1fr}
+.creme-c2c-panel-center{font-size:20px}
+}
