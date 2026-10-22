@@ -8,15 +8,18 @@ export const site = {
 };
 
 export const services = [
-  { number: "01", title: "Screen printing", desc: "Bold, durable graphics for tees, teams, events and everyday merchandise.", tag: "APPAREL" },
-  { number: "02", title: "Embroidery", desc: "Clean stitched branding for hats, polos, workwear and uniforms.", tag: "DETAIL" },
-  { number: "03", title: "DTF transfers", desc: "Color-rich prints for detailed artwork and flexible merchandise runs.", tag: "PRINT" },
-  { number: "04", title: "Uniform programs", desc: "Consistent apparel for schools, hospitality teams, contractors and companies.", tag: "BUSINESS" },
-  { number: "05", title: "Headwear & accessories", desc: "Custom caps, bags and branded essentials developed around your idea.", tag: "GOODS" },
-  { number: "06", title: "Private-label production", desc: "From garment selection to custom labels and finished branded products.", tag: "DEVELOPMENT" },
-  { number: "07", title: "Corporate merchandise", desc: "Branded gifting, staff kits, office essentials and event programs.", tag: "CORPORATE" },
-  { number: "08", title: "Custom packaging", desc: "Presentation boxes, labels and branded packaging made to specification.", tag: "PACKAGING" },
-  { number: "09", title: "Global sourcing", desc: "A broader range of products identified and coordinated through international suppliers.", tag: "SOURCING" },
+  { number: "01", title: "Business consulting", desc: "Product strategy, sourcing feasibility, scope and commercial planning for new business initiatives.", tag: "CONSULTING" },
+  { number: "02", title: "Brand & product development", desc: "From ideas, reference images and specifications to brand-ready products and manufacturing briefs.", tag: "DEVELOPMENT" },
+  { number: "03", title: "Global sourcing", desc: "C2C China 2 Caribbean supplier research, quotations, sampling and international product sourcing.", tag: "C2C" },
+  { number: "04", title: "Manufacturing & production coordination", desc: "Partner coordination for approved specifications, sample reviews, production needs and delivery planning.", tag: "MANUFACTURING" },
+  { number: "05", title: "Private-label production", desc: "Product development, private labels, garment trims, branding and finished merchandise.", tag: "PRIVATE LABEL" },
+  { number: "06", title: "Corporate merchandise", desc: "Branded gifting, staff kits, office essentials and event merchandise programs.", tag: "CORPORATE" },
+  { number: "07", title: "Screen printing", desc: "Durable graphic printing for apparel, teams, brands and corporate products.", tag: "APPAREL" },
+  { number: "08", title: "Embroidery", desc: "Stitched branding for caps, polos, uniforms and business merchandise.", tag: "DETAIL" },
+  { number: "09", title: "DTF transfers", desc: "Detailed, color-rich designs for apparel and merchandise programs.", tag: "PRINT" },
+  { number: "10", title: "Uniform programs", desc: "Consistent uniforms and workwear for teams, schools, hospitality and contractors.", tag: "WORKWEAR" },
+  { number: "11", title: "Headwear & accessories", desc: "Custom hats, bags and branded products developed around project requirements.", tag: "ACCESSORIES" },
+  { number: "12", title: "Custom packaging", desc: "Labels, presentation boxes, protective packaging and other brand-ready finishing.", tag: "PACKAGING" },
 ];
 
 export const productionSteps = [
