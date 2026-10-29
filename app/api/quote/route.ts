@@ -1,13 +1,10 @@
 import {randomUUID} from "node:crypto";
 import {NextResponse} from "next/server";
-import {services} from "@/lib/site";
 import {saveRfq,storeReady,submitAllowed,type Rfq} from "@/lib/rfq";
 import {ownerEmail,customerEmail} from "@/lib/rfq-email";
 
 export const runtime="nodejs";
-const allowedServices = new Set([...services.map(s=>s.title),"Not sure yet"]);
-const consultativeServices=new Set(["Business consulting","Brand & product development"]);
-const sourcingCategories=new Set(["Corporate / office","Promotional merchandise","Apparel / uniforms","Automotive / parts","Construction / building materials","Packaging / displays","Hospitality / facilities","Other / specialty product"]);
+const allowedServices = new Set(["General Product Sourcing","Apparel & Uniforms","Automotive & Parts","Construction & Building Materials","Solar & Renewable Energy","Home & Lifestyle","Jewelry & Gadgets","Consumer Goods","Freight & Logistics","Manufacturing & Private Label","Business consulting","Brand & product development","Other / Custom Request","Not sure yet"]);
 const str=(v:unknown,max=1000)=>typeof v==="string"?v.trim().slice(0,max):"";
 const MAX_BODY=3100000;
 type Attachment={filename:string;content:string};
@@ -41,7 +38,7 @@ export async function POST(request:Request){
   const service=str(data.service,120),details=str(data.details,4000),quantity=Number(data.quantity);
   const deadline=str(data.deadline,40),artwork=str(data.artwork,1000),category=str(data.category,100);
   const delivery=str(data.delivery,120),budget=str(data.budget,30);
-  if(!name||!/^\S+@\S+\.\S+$/.test(email)||!allowedServices.has(service)||!Number.isInteger(quantity)||quantity<0||(!consultativeServices.has(service)&&quantity<1)||quantity>100000||!details||data.consent!=="on"||(service==="Global sourcing"&&!sourcingCategories.has(category)))
+  if(!name||!/^\S+@\S+\.\S+$/.test(email)||!allowedServices.has(service)||!Number.isInteger(quantity)||quantity<0||quantity<0||quantity>100000||!details||data.consent!=="on")
    return NextResponse.json({message:"Please complete all required fields correctly."},{status:400});
   if(artwork){try{const url=new URL(artwork);if(!["https:","http:"].includes(url.protocol))throw Error();}catch{return NextResponse.json({message:"Please enter a valid reference link."},{status:400})}}
   if(budget&&(!/^\d{1,9}(\.\d{1,2})?$/.test(budget)||Number(budget)<=0))return NextResponse.json({message:"Enter a valid KYD budget, or leave it blank."},{status:400});
@@ -55,14 +52,14 @@ export async function POST(request:Request){
   catch(err){console.error("Optional Redis rate limit unavailable; continuing email inquiry",err instanceof Error?err.message:"Unknown error");}
   const ref=randomUUID();
   const item:Rfq={id:ref,createdAt:new Date().toISOString(),status:"New",name,email,company,phone,service,details,quantity,deadline,artwork,category,delivery,budget,attachmentName:attachment?.filename};
-  const text=["New CRÈME business inquiry",`Reference: ${ref.slice(0,8).toUpperCase()}`,`Name: ${name}`,`Company: ${company}`,`Email: ${email}`,`Phone: ${phone}`,`Service: ${service}`,`Product category: ${category}`,`Quantity: ${quantity===0?"Not applicable":quantity}`,`Target budget (KYD): ${budget?`CI$${budget}`:"Not supplied"}`,`Needed by: ${deadline||"Not specified"}`,`Delivery area: ${delivery||"Not specified"}`,`Reference: ${artwork||"Not supplied"}`,`Attachment: ${attachment?.filename||"Not supplied"}`,"","Project details:",details].join("\n");
-  const emailBody={from,to:[to],reply_to:email,subject:`CRÈME inquiry [${ref.slice(0,8).toUpperCase()}]: ${service} — ${name}`,html:ownerEmail(item),text,...(attachment?{attachments:[attachment]}:{})};
+  const text=["New C2C sourcing inquiry",`Reference: ${ref.slice(0,8).toUpperCase()}`,`Name: ${name}`,`Company: ${company}`,`Email: ${email}`,`Phone: ${phone}`,`Service: ${service}`,`Product category: ${category}`,`Quantity: ${quantity===0?"Not applicable":quantity}`,`Target budget (KYD): ${budget?`CI$${budget}`:"Not supplied"}`,`Needed by: ${deadline||"Not specified"}`,`Delivery area: ${delivery||"Not specified"}`,`Reference: ${artwork||"Not supplied"}`,`Attachment: ${attachment?.filename||"Not supplied"}`,"","Project details:",details].join("\n");
+  const emailBody={from,to:[to],reply_to:email,subject:`C2C inquiry [${ref.slice(0,8).toUpperCase()}]: ${service} — ${name}`,html:ownerEmail(item),text,...(attachment?{attachments:[attachment]}:{})};
   const response=await fetch("https://api.resend.com/emails",{method:"POST",headers:{Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify(emailBody),cache:"no-store"});
   if(!response.ok){console.error("Owner email delivery failure",response.status);return NextResponse.json({message:"We couldn't deliver your request. Please email info@cremeky.com."},{status:502});}
   try{await saveRfq(item);}catch(e){console.error("Optional RFQ dashboard storage failed",e instanceof Error?e.message:"Error");}
   // Customer acknowledgment is best-effort: it must never cause a duplicate form submission.
   if(storeReady() && process.env.QUOTE_AUTO_REPLY==="true")try{
-   const acknowledgment=await fetch("https://api.resend.com/emails",{method:"POST",headers:{Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify({from,to:[email],reply_to:to,subject:`CRÈME · Request received [${ref.slice(0,8).toUpperCase()}]`,html:customerEmail(item),text:`Hi ${name},\n\nThanks for contacting CRÈME Products. Your inquiry has been received (reference ${ref.slice(0,8).toUpperCase()}). We'll review it and follow up. This isn't a quotation or order confirmation.\n\nCRÈME Products\ninfo@cremeky.com`}),cache:"no-store"});
+   const acknowledgment=await fetch("https://api.resend.com/emails",{method:"POST",headers:{Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify({from,to:[email],reply_to:to,subject:`C2C · Request received [${ref.slice(0,8).toUpperCase()}]`,html:customerEmail(item),text:`Hi ${name},\n\nThanks for contacting C2C — China 2 Cayman. Your inquiry has been received (reference ${ref.slice(0,8).toUpperCase()}). We'll review it and follow up. This isn't a quotation or order confirmation.\n\nC2C — China 2 Cayman\ninfo@cremeky.com`}),cache:"no-store"});
    if(!acknowledgment.ok)console.warn("Customer acknowledgment could not be sent",acknowledgment.status);
   }catch(e){console.warn("Customer acknowledgment unavailable");}
   return NextResponse.json({message:"Your request was received.",reference:ref.slice(0,8).toUpperCase()});
