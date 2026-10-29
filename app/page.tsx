@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const industries = [
-  { title: "Apparel & Uniforms", image: "/images/approved/02-industry-apparel.png", category: "Apparel & Uniforms" },
-  { title: "Automotive & Parts", image: "/images/approved/03-industry-automotive.png", category: "Automotive & Parts" },
-  { title: "Construction & Building Materials", image: "/images/approved/04-industry-construction.png", category: "Construction & Building Materials" },
+  { title: "Apparel & Uniforms", image: "/images/approved/service-manufacturing.webp", category: "Apparel & Uniforms" },
+  { title: "Automotive & Parts", image: "/images/approved/service-automotive-sourcing.webp", category: "Automotive & Parts" },
+  { title: "Construction & Building Materials", image: "/images/approved/construction.webp", category: "Construction & Building Materials" },
   { title: "Solar & Renewable Energy", image: null, category: "Solar & Renewable Energy" },
   { title: "Home & Lifestyle", image: null, category: "Home & Lifestyle" },
   { title: "Jewelry & Accessories", image: null, category: "Jewelry & Accessories" },
