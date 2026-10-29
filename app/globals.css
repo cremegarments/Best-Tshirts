@@ -336,3 +336,8 @@ body:has(.c2c-new-site){background:#080b10}
 .c2c-new-card-title{left:10px;right:18px;bottom:18px;font-size:clamp(10px,.95vw,14px);overflow-wrap:normal;word-break:normal;text-shadow:0 1px 2px #000}
 .c2c-new-card-arrow{right:8px;bottom:2px}
 @media(max-width:600px){.c2c-new-card{aspect-ratio:.69}.c2c-new-card-title{left:6px;right:6px;bottom:22px;font-size:clamp(8px,2.2vw,11px);line-height:1.12}.c2c-new-card-arrow{bottom:2px;right:6px}}
+
+/* Original transparent logo: no background, no masking or recreation */
+.c2c-new-hero-logo{display:block;width:min(540px,92%);height:auto;max-height:300px;object-fit:contain;margin:0 auto 20px;background:transparent}
+.c2c-new-header-brand img{display:block;width:clamp(105px,13vw,165px);height:auto;max-height:65px;object-fit:contain;background:transparent}
+@media(max-width:600px){.c2c-new-hero-logo{width:min(380px,94%);max-height:245px;margin-bottom:15px}.c2c-new-header-brand img{width:110px;max-height:65px}}
