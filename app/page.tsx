@@ -31,7 +31,7 @@ export default function Home() {
       <h2 id="industries-title" className="c2c-new-section-title">INDUSTRIES WE SERVE</h2>
       <div className="c2c-new-grid">
         {industries.map((industry) => <Link className="c2c-new-card" key={industry.title} href={`/quote?category=${encodeURIComponent(industry.category)}`}>
-          {industry.secondaryImage ? <div className="c2c-new-card-collage"><img src={industry.image} alt="" loading="lazy" /><img src={industry.secondaryImage} alt="" loading="lazy" /></div> : industry.image.startsWith("https://") ? <img className="c2c-new-card-photo" src={industry.image} alt="" loading="lazy" /> : <Image src={industry.image} alt="" fill sizes="(max-width: 600px) 50vw, (max-width: 950px) 25vw, 25vw" />}
+          {industry.image.startsWith("https://") ? <img className="c2c-new-card-photo" src={industry.image} alt="" loading="lazy" /> : <Image src={industry.image} alt="" fill sizes="(max-width: 600px) 50vw, (max-width: 950px) 25vw, 25vw" />}
           <span className="c2c-new-card-title">{industry.title}</span><span className="c2c-new-card-arrow" aria-hidden="true">→</span>
         </Link>)}
       </div>
