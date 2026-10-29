@@ -7,8 +7,8 @@ const industries = [
   { title: "Construction & Building Materials", image: "/images/approved/construction.webp", category: "Construction & Building Materials" },
   { title: "Solar & Renewable Energy", image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1100&q=85", category: "Solar & Renewable Energy" },
   { title: "Home & Lifestyle", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1100&q=85", category: "Home & Lifestyle" },
-  { title: "Jewelry & Gadgets", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=900&q=85", secondaryImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900&q=85", category: "Jewelry & Gadgets" },
-  { title: "Consumer Goods", image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=900&q=85", secondaryImage: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900&q=85", category: "Consumer Goods" },
+  { title: "Jewelry & Gadgets", image: "/images/approved/c2c-jewelry-gadgets-final.jpg", category: "Jewelry & Gadgets" },
+  { title: "Consumer Goods", image: "/images/approved/c2c-consumer-goods-final.jpg", category: "Consumer Goods" },
   { title: "Freight & Logistics", image: "/images/approved/c2c-shipping.webp", category: "Freight & Logistics" }
 ];
 
