@@ -17,9 +17,7 @@ export default function Home() {
     <section className="c2c-new-hero" aria-labelledby="c2c-heading">
       <div className="c2c-new-hero-inner">
         <p className="c2c-new-kicker">CHINA <span>✦</span> CAYMAN ISLANDS</p>
-        <p className="c2c-new-wordmark">C<span>2</span>C</p>
-        <p className="c2c-new-brandline">CHINA 2 CAYMAN</p>
-        <p className="c2c-new-tagline">SOURCING <span>•</span> TRADING <span>•</span> GLOBAL SOLUTIONS</p>
+        <Image className="c2c-new-hero-logo" src="/C2C_Original_Logo_Fully_Transparent.png" alt="C2C China 2 Cayman — Sourcing, Trading, Global Solutions" width={650} height={360} priority />
         <h1 id="c2c-heading">YOU NEED IT.<br/>WE SOURCE IT.</h1>
         <p className="c2c-new-script">China 2 Cayman.</p>
         <p className="c2c-new-description">Connecting Cayman businesses with Chinese manufacturers through supplier sourcing, procurement, production coordination and international freight solutions.</p>
