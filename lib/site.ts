@@ -8,18 +8,18 @@ export const site = {
 };
 
 export const services = [
-  { number: "01", title: "Business consulting", desc: "Product strategy, sourcing feasibility, scope and commercial planning for new business initiatives.", tag: "CONSULTING" },
-  { number: "02", title: "Brand & product development", desc: "From ideas, reference images and specifications to brand-ready products and manufacturing briefs.", tag: "DEVELOPMENT" },
-  { number: "03", title: "Global sourcing", desc: "C2C China 2 Caribbean supplier research, quotations, sampling and international product sourcing.", tag: "C2C" },
-  { number: "04", title: "Manufacturing & production coordination", desc: "Partner coordination for approved specifications, sample reviews, production needs and delivery planning.", tag: "MANUFACTURING" },
-  { number: "05", title: "Private-label production", desc: "Product development, private labels, garment trims, branding and finished merchandise.", tag: "PRIVATE LABEL" },
-  { number: "06", title: "Corporate merchandise", desc: "Branded gifting, staff kits, office essentials and event merchandise programs.", tag: "CORPORATE" },
-  { number: "07", title: "Screen printing", desc: "Durable graphic printing for apparel, teams, brands and corporate products.", tag: "APPAREL" },
-  { number: "08", title: "Embroidery", desc: "Stitched branding for caps, polos, uniforms and business merchandise.", tag: "DETAIL" },
-  { number: "09", title: "DTF transfers", desc: "Detailed, color-rich designs for apparel and merchandise programs.", tag: "PRINT" },
-  { number: "10", title: "Uniform programs", desc: "Consistent uniforms and workwear for teams, schools, hospitality and contractors.", tag: "WORKWEAR" },
-  { number: "11", title: "Headwear & accessories", desc: "Custom hats, bags and branded products developed around project requirements.", tag: "ACCESSORIES" },
-  { number: "12", title: "Custom packaging", desc: "Labels, presentation boxes, protective packaging and other brand-ready finishing.", tag: "PACKAGING" },
+  { number: "01", title: "China-to-Cayman sourcing", desc: "Identify suitable manufacturers and suppliers in China, compare options and source products for Cayman businesses.", tag: "SOURCING" },
+  { number: "02", title: "Procurement & quotations", desc: "Coordinate product requirements, supplier quotations, samples and purchasing plans before an order is approved.", tag: "PROCUREMENT" },
+  { number: "03", title: "Manufacturing & production coordination", desc: "Coordinate specifications, sampling, production milestones and quality requirements with selected manufacturing partners.", tag: "MANUFACTURING" },
+  { number: "04", title: "Freight & logistics coordination", desc: "Help plan China-to-Cayman shipping, cargo documentation and delivery arrangements with logistics providers.", tag: "LOGISTICS" },
+  { number: "05", title: "Construction & building materials", desc: "Source building materials, aluminum systems, fittings and project-specific construction products.", tag: "CONSTRUCTION" },
+  { number: "06", title: "Automotive parts & components", desc: "Source replacement parts, accessories and automotive components using model and specification details.", tag: "AUTOMOTIVE" },
+  { number: "07", title: "Solar & renewable energy", desc: "Explore solar panels, inverters, batteries and related energy equipment through supplier quotation requests.", tag: "SOLAR" },
+  { number: "08", title: "Consumer goods & lifestyle", desc: "Source home essentials, packaged consumer products, jewelry, gadgets and other commercial merchandise.", tag: "PRODUCTS" },
+  { number: "09", title: "Business consulting & product development", desc: "Develop sourcing briefs, product specifications, private-label concepts and practical procurement strategies.", tag: "DEVELOPMENT" },
+  { number: "10", title: "Apparel & uniform production", desc: "Custom apparel, workwear, uniforms and merchandise programs built on our CRÈME manufacturing experience.", tag: "APPAREL" },
+  { number: "11", title: "Printing, embroidery & branding", desc: "Screen printing, embroidery, DTF transfers and branded finishing for apparel and promotional goods.", tag: "BRANDING" },
+  { number: "12", title: "Private label & custom packaging", desc: "Coordinate private-label products, branded packaging, labeling and presentation materials with suppliers.", tag: "PRIVATE LABEL" },
 ];
 
 export const productionSteps = [
