@@ -1,45 +1,42 @@
 import Link from "next/link";
 import Image from "next/image";
-import {process} from "@/lib/site";
-
-const pillars = [
-  {number:"01",eyebrow:"ADVISE",title:"Business consulting",description:"Practical guidance on product strategy, supplier requirements, commercial planning and the route from idea to market.",href:"/quote?service=Business%20consulting",action:"Discuss your project"},
-  {number:"02",eyebrow:"DEVELOP",title:"Brand & product development",description:"Turn an idea, reference or specification into a product brief, brand-ready concept and production requirements.",href:"/services",action:"Explore development"},
-  {number:"03",eyebrow:"CONNECT",title:"Global sourcing",description:"Explore suppliers and manufacturing options through our C2C — China 2 Caribbean sourcing initiative.",href:"/sourcing#c2c",action:"Discover C2C"},
-  {number:"04",eyebrow:"DELIVER",title:"Manufacturing & production",description:"Coordinate quotations, samples, approved production, quality requirements and logistics with manufacturing partners.",href:"/services",action:"Explore production"}
-];
 
 const industries = [
-  {number:"01",title:"Apparel & merchandise",description:"Private-label collections, uniforms, promotional products, packaging and branded goods.",category:"Apparel / uniforms",keywords:"FASHION / UNIFORMS / BRANDING"},
-  {number:"02",title:"Automotive",description:"Automotive parts, accessories, product sourcing and supplier coordination for Cayman Islands and Caribbean businesses.",category:"Automotive / parts",keywords:"PARTS / ACCESSORIES / SOURCING"},
-  {number:"03",title:"Construction",description:"Building products, architectural components, specifications and supplier coordination.",category:"Construction / building materials",keywords:"MATERIALS / COMPONENTS / PROCUREMENT"}
+  { title: "Apparel & Uniforms", image: "/images/approved/02-industry-apparel.png", category: "Apparel & Uniforms" },
+  { title: "Automotive & Parts", image: "/images/approved/03-industry-automotive.png", category: "Automotive & Parts" },
+  { title: "Construction & Building Materials", image: "/images/approved/04-industry-construction.png", category: "Construction & Building Materials" },
+  { title: "Solar & Renewable Energy", image: null, category: "Solar & Renewable Energy" },
+  { title: "Home & Lifestyle", image: null, category: "Home & Lifestyle" },
+  { title: "Jewelry & Accessories", image: null, category: "Jewelry & Accessories" },
+  { title: "Consumer Goods", image: null, category: "Consumer Goods" },
+  { title: "Freight & Logistics", image: "/images/approved/c2c-shipping.webp", category: "Freight & Logistics" }
 ];
 
-export default function Home(){return <>
-  <div className="approved-home">
-  <section className="review-hero" aria-labelledby="approved-heading">
-    <div className="hero-photo-space"><Image src="/images/approved/hero-cross-industry.webp" alt="Apparel, automotive components and construction materials in a cross-industry development studio" fill priority sizes="100vw" /></div>
-    <div className="review-hero-copy"><p className="eyebrow">GLOBAL BUSINESS &amp;<br/>MANUFACTURING SOLUTIONS —</p>
-    <h1 id="approved-heading">YOUR VISION.<br/>OUR EXPERTISE.<br/><em>NO BOUNDARIES.</em></h1>
-    <p>Your consulting, product development, global sourcing and manufacturing partner. Connecting businesses across apparel, automotive and construction with the expertise to move from concept to creation.</p>
-    <div className="review-actions"><Link href="/services" className="button button-cream">Explore our services <span aria-hidden="true">→</span></Link><Link href="/contact" className="button button-outline-light">Let's talk <span aria-hidden="true">→</span></Link></div></div>
-    <p className="hero-process">CONCEPT<br/>STRATEGY<br/>SOURCING<br/>PRODUCTION<br/>DELIVERY</p>
-  </section>
-  <section className="approved-pillars" id="what-we-do" aria-label="Our capabilities">{pillars.map((p,i)=><Link href={p.href} key={p.number}><svg aria-hidden="true" className="pillar-symbol" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">{i===0?<><path d="M11 23c0-5-5-7-5-12a10 10 0 0 1 20 0c0 5-5 7-5 12Z M12 26h8 M13 29h6 M16 23V12"/></>:i===1?<><path d="m16 2 13 7v14l-13 7L3 23V9Z M3 9l13 7 13-7 M16 16v14"/></>:i===2?<><circle cx="16" cy="16" r="14"/><ellipse cx="16" cy="16" rx="6" ry="14"/><path d="M2 16h28 M5 7q11 7 22 0 M5 25q11-7 22 0"/></>:<><path d="m12 2 1 4h6l1-4 5 3-2 4 3 5 4 1v5l-4 1-3 5 2 3-5 2-1-4h-6l-1 4-5-3 2-4-3-5-4-1v-5l4-1 3-5-2-3Z"/><circle cx="16" cy="17" r="6"/></>}</svg><h2>{["Business consulting","Product development","Global sourcing","Manufacturing coordination"][i]}</h2><p>{["Turn ideas into commercial success","From concept to market-ready products","Trusted supplier networks in Asia","Quality, efficiency and reliable delivery"][i]}</p></Link>)}</section>
-  <section className="approved-industries" id="industries"><div className="approved-industry-heading"><div><p className="eyebrow">INDUSTRIES WE SERVE —</p><h2>DIFFERENT INDUSTRIES.<br/><em>A STRONGER TOMORROW.</em></h2></div><p>Specialized expertise across key industries, with a global network that turns opportunity into reality.</p></div><div className="approved-industry-grid">{industries.map((industry,i)=><Link key={industry.number} className="review-industry" href={i===1?"/automotive":`/quote?service=Global%20sourcing&category=${encodeURIComponent(industry.category)}`}><div className="industry-photo"><Image src={`/images/approved/${["service-manufacturing","automotive","construction"][i]}.webp`} alt={["Apparel production in a garment factory","Luxury automotive interior","Construction project at sunset"][i]} fill sizes="(max-width: 760px) 90vw, 440px" /></div><div><h3>{["Apparel","Automotive","Construction"][i]}</h3><p>{["Design. Develop. Manufacture.","Components. Accessories. Production support.","Materials. Product sourcing. Supply chain solutions."][i]}</p><span aria-hidden="true">→</span></div></Link>)}</div></section>
-  <section className="review-c2c" aria-labelledby="c2c-home-heading"><div><p className="eyebrow">C2C — CHINA 2 CARIBBEAN</p><h2 id="c2c-home-heading"><em>A STRONGER<br/>SUPPLY CHAIN<br/>FOR A BRIGHTER<br/>CARIBBEAN.</em></h2><p>Connecting global manufacturing capabilities with Caribbean businesses, including the Cayman Islands.</p><Link className="text-link" href="/sourcing#c2c">Learn more about C2C <span aria-hidden="true">→</span></Link></div><div className="c2c-photo-space"><Image src="/images/approved/c2c-shipping.webp" alt="Close-up of a container ship carrying international freight" fill sizes="(max-width: 760px) 100vw, 780px" /><p className="route-line">CHINA <span aria-hidden="true">● ─────→ ●</span> CARIBBEAN</p></div></section>
-  <section className="approved-services"><div className="approved-services-heading"><h2 className="eyebrow">OUR SERVICES —</h2><Link href="/services">VIEW ALL SERVICES →</Link></div><div className="approved-service-grid">{[
-{image:"consulting",title:"Consulting",href:pillars[0].href,alt:"Business consulting and planning"},
-{image:"product-development",title:"Product development",href:"/services",alt:"Product sketches and material development"},
-{image:"manufacturing",title:"Manufacturing",href:"/services",alt:"Garment manufacturing and production"},
-{image:"automotive-sourcing",title:"Automotive sourcing",href:"/automotive",alt:"Automotive components and sourcing"},
-{image:"quality-control",title:"Quality control",href:"/services",alt:"Product quality inspection"},
-{image:"logistics",title:"Logistics",href:"/sourcing#c2c",alt:"Freight and logistics coordination"}
-].map((service,i)=><Link key={service.image} href={service.href}><div className="service-photo"><Image src={`/images/approved/service-${service.image}.webp`} alt={service.alt} fill sizes="(max-width: 600px) 88vw, (max-width: 1000px) 42vw, 384px" /></div><div><small>0{i+1}</small><h3>{service.title}</h3><span className="service-arrow" aria-hidden="true">↗</span></div></Link>)}</div></section>
-  </div>
-  <section className="section shell procurement-spotlight creme-procurement"><div className="spotlight-mark" aria-hidden="true">C/</div><div><p className="eyebrow">04 / PROFESSIONAL PROCUREMENT</p><h2>FROM SPECIFICATION<br/><em>TO EXECUTION.</em></h2><p>Product briefs, supplier comparisons, itemized quotations and purchasing documentation for business and institutional requirements.</p><Link href="/procurement" className="button button-dark">Explore procurement ↗</Link></div></section>
-
-  <section className="section shell"><div className="section-heading"><div><p className="eyebrow">05 / HOW WE WORK</p><h2>CLARITY FROM<br/><em>DAY ONE.</em></h2></div><p>Every project is assessed individually for technical feasibility, supply availability, pricing and delivery requirements.</p></div><div className="steps">{process.map(step=><div className="step" key={step.no}><span>{step.no}</span><h3>{step.title}</h3><p>{step.desc}</p></div>)}</div><Link href="/how-it-works" className="section-link">Understand our process <span aria-hidden="true">↗</span></Link></section>
-
-  <section className="project-banner creme-project-banner"><div className="shell project-banner-inner"><div><p className="eyebrow">LET'S BUILD SOMETHING MEANINGFUL</p><h2>YOUR NEXT IDEA.<br/><em>OUR NEXT PROJECT.</em></h2></div><Link className="button button-dark" href="/contact">Start a conversation <span aria-hidden="true">↗</span></Link></div></section>
-</>}
+export default function Home() {
+  return <div className="c2c-new-site">
+    <section className="c2c-new-hero" aria-labelledby="c2c-heading">
+      <div className="c2c-new-hero-inner">
+        <p className="c2c-new-kicker">CHINA <span>✦</span> CAYMAN ISLANDS</p>
+        <p className="c2c-new-wordmark">C<span>2</span>C</p>
+        <p className="c2c-new-brandline">CHINA 2 CAYMAN</p>
+        <p className="c2c-new-tagline">SOURCING <span>•</span> TRADING <span>•</span> GLOBAL SOLUTIONS</p>
+        <h1 id="c2c-heading">YOU NEED IT.<br/>WE SOURCE IT.</h1>
+        <p className="c2c-new-script">China 2 Cayman.</p>
+        <p className="c2c-new-description">Connecting Cayman businesses with Chinese manufacturers through supplier sourcing, procurement, production coordination and international freight solutions.</p>
+        <div className="c2c-new-actions">
+          <Link href="/quote">REQUEST A SOURCING QUOTE <span aria-hidden="true">→</span></Link>
+          <Link href="/services">OUR SERVICES <span aria-hidden="true">→</span></Link>
+        </div>
+      </div>
+    </section>
+    <section className="c2c-new-industries" id="industries" aria-labelledby="industries-title">
+      <h2 id="industries-title" className="c2c-new-section-title">INDUSTRIES WE SERVE</h2>
+      <div className="c2c-new-grid">
+        {industries.map((industry) => <Link className="c2c-new-card" key={industry.title} href={`/quote?category=${encodeURIComponent(industry.category)}`}>
+          {industry.image ? <Image src={industry.image} alt="" fill sizes="(max-width: 720px) 25vw, 15vw" /> : <div className="c2c-new-image-pending" aria-hidden="true"><span>PHOTO COMING SOON</span></div>}
+          <span className="c2c-new-card-title">{industry.title}</span><span className="c2c-new-card-arrow" aria-hidden="true">→</span>
+        </Link>)}
+      </div>
+    </section>
+  </div>;
+}
