@@ -46,22 +46,22 @@ export async function POST(request:Request){
   let attachment:Attachment|undefined;
   try{attachment=parseAttachment(data.attachment);}catch(err){return NextResponse.json({message:err instanceof Error?err.message:"Invalid file."},{status:400})}
   const key=process.env.RESEND_API_KEY,to=process.env.QUOTE_TO_EMAIL,from=process.env.QUOTE_FROM_EMAIL;
-  if(!key||!to||!from)return NextResponse.json({message:"Email service is not configured. Please email info@cremeky.com."},{status:503});
+  if(!key||!to||!from)return NextResponse.json({message:"Email service is not configured. Please email info@c2cky.com."},{status:503});
   const ip=request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()||"unknown";
-  try{if(!await submitAllowed(ip))return NextResponse.json({message:"Too many requests. Please email CRÈME directly."},{status:429});}
+  try{if(!await submitAllowed(ip))return NextResponse.json({message:"Too many requests. Please email C2C directly."},{status:429});}
   catch(err){console.error("Optional Redis rate limit unavailable; continuing email inquiry",err instanceof Error?err.message:"Unknown error");}
   const ref=randomUUID();
   const item:Rfq={id:ref,createdAt:new Date().toISOString(),status:"New",name,email,company,phone,service,details,quantity,deadline,artwork,category,delivery,budget,attachmentName:attachment?.filename};
   const text=["New C2C sourcing inquiry",`Reference: ${ref.slice(0,8).toUpperCase()}`,`Name: ${name}`,`Company: ${company}`,`Email: ${email}`,`Phone: ${phone}`,`Service: ${service}`,`Product category: ${category}`,`Quantity: ${quantity===0?"Not applicable":quantity}`,`Target budget (KYD): ${budget?`CI$${budget}`:"Not supplied"}`,`Needed by: ${deadline||"Not specified"}`,`Delivery area: ${delivery||"Not specified"}`,`Reference: ${artwork||"Not supplied"}`,`Attachment: ${attachment?.filename||"Not supplied"}`,"","Project details:",details].join("\n");
   const emailBody={from,to:[to],reply_to:email,subject:`C2C inquiry [${ref.slice(0,8).toUpperCase()}]: ${service} — ${name}`,html:ownerEmail(item),text,...(attachment?{attachments:[attachment]}:{})};
   const response=await fetch("https://api.resend.com/emails",{method:"POST",headers:{Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify(emailBody),cache:"no-store"});
-  if(!response.ok){console.error("Owner email delivery failure",response.status);return NextResponse.json({message:"We couldn't deliver your request. Please email info@cremeky.com."},{status:502});}
+  if(!response.ok){console.error("Owner email delivery failure",response.status);return NextResponse.json({message:"We couldn't deliver your request. Please email info@c2cky.com."},{status:502});}
   try{await saveRfq(item);}catch(e){console.error("Optional RFQ dashboard storage failed",e instanceof Error?e.message:"Error");}
   // Customer acknowledgment is best-effort: it must never cause a duplicate form submission.
   if(storeReady() && process.env.QUOTE_AUTO_REPLY==="true")try{
-   const acknowledgment=await fetch("https://api.resend.com/emails",{method:"POST",headers:{Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify({from,to:[email],reply_to:to,subject:`C2C · Request received [${ref.slice(0,8).toUpperCase()}]`,html:customerEmail(item),text:`Hi ${name},\n\nThanks for contacting C2C — China 2 Cayman. Your inquiry has been received (reference ${ref.slice(0,8).toUpperCase()}). We'll review it and follow up. This isn't a quotation or order confirmation.\n\nC2C — China 2 Cayman\ninfo@cremeky.com`}),cache:"no-store"});
+   const acknowledgment=await fetch("https://api.resend.com/emails",{method:"POST",headers:{Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify({from,to:[email],reply_to:to,subject:`C2C · Request received [${ref.slice(0,8).toUpperCase()}]`,html:customerEmail(item),text:`Hi ${name},\n\nThanks for contacting C2C — China 2 Cayman. Your inquiry has been received (reference ${ref.slice(0,8).toUpperCase()}). We'll review it and follow up. This isn't a quotation or order confirmation.\n\nC2C — China 2 Cayman\ninfo@c2cky.com`}),cache:"no-store"});
    if(!acknowledgment.ok)console.warn("Customer acknowledgment could not be sent",acknowledgment.status);
   }catch(e){console.warn("Customer acknowledgment unavailable");}
   return NextResponse.json({message:"Your request was received.",reference:ref.slice(0,8).toUpperCase()});
- }catch(err){console.error("Quote route error",err instanceof Error?err.message:"Unknown");return NextResponse.json({message:"Unable to process your request. Please contact info@cremeky.com."},{status:500});}
+ }catch(err){console.error("Quote route error",err instanceof Error?err.message:"Unknown");return NextResponse.json({message:"Unable to process your request. Please contact info@c2cky.com."},{status:500});}
 }
