@@ -14,9 +14,10 @@ export function QuoteForm() {
   const [serviceChoice,setServiceChoice] = useState(c2cServices.includes(selectedService)?selectedService:(c2cServices.includes(selectedCategory)?selectedCategory:""));
   const [status,setStatus] = useState<Status>("idle");
   const [message,setMessage] = useState("");
+  const [emailDraft,setEmailDraft] = useState("");
   async function submit(event:FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("sending"); setMessage("");
+    setStatus("sending"); setMessage(""); setEmailDraft("");
     const form = event.currentTarget;
     const body = Object.fromEntries(new FormData(form).entries());
     try {
@@ -44,7 +45,7 @@ export function QuoteForm() {
     <label className="consent"><input type="checkbox" name="consent" required/> <span>I agree to be contacted about this project. Final pricing and lead times are confirmed after reviewing specifications.</span></label>
     <div className="honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabIndex={-1} autoComplete="off"/></label></div>
     {status === "success" && <p className="form-feedback form-success" role="status">{message}</p>}
-    {status === "error" && <p className="form-feedback form-error" role="alert">{message} {site.email&&<a href={`mailto:${site.email}`}>Email us instead ↗</a>}</p>}
+    {status === "error" && <div className="form-feedback form-error" role="alert"><p>{message}</p>{emailDraft ? <a href={emailDraft} className="button button-dark" style={{display:"inline-block",marginTop:12}}>Open email with my inquiry ↗</a> : site.email&&<a href={`mailto:${site.email}`}>Email us instead ↗</a>}</div>}
     <button type="submit" disabled={status==="sending"} className="button button-dark submit-button">{status==="sending"?"Sending…":"Submit inquiry"}<span aria-hidden="true">↗</span></button>
     <p className="form-note">No payment is collected through this form. Quotes are reviewed individually.</p>
   </form>;
