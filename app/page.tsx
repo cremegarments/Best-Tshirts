@@ -7,7 +7,7 @@ const industries = [
   { title: "Construction & Building Materials", image: "/images/approved/construction.webp", category: "Construction & Building Materials" },
   { title: "Solar & Renewable Energy", image: null, category: "Solar & Renewable Energy" },
   { title: "Home & Lifestyle", image: null, category: "Home & Lifestyle" },
-  { title: "Jewelry & Accessories", image: null, category: "Jewelry & Accessories" },
+  { title: "Jewelry & Gadgets", image: null, category: "Jewelry & Gadgets" },
   { title: "Consumer Goods", image: null, category: "Consumer Goods" },
   { title: "Freight & Logistics", image: "/images/approved/c2c-shipping.webp", category: "Freight & Logistics" }
 ];
