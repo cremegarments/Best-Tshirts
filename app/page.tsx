@@ -7,8 +7,8 @@ const industries = [
   { title: "Construction & Building Materials", image: "/images/approved/construction.webp", category: "Construction & Building Materials" },
   { title: "Solar & Renewable Energy", image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1100&q=85", category: "Solar & Renewable Energy" },
   { title: "Home & Lifestyle", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1100&q=85", category: "Home & Lifestyle" },
-  { title: "Jewelry & Gadgets", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1100&q=85", category: "Jewelry & Gadgets" },
-  { title: "Consumer Goods", image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=1100&q=85", category: "Consumer Goods" },
+  { title: "Jewelry & Gadgets", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=900&q=85", secondaryImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900&q=85", category: "Jewelry & Gadgets" },
+  { title: "Consumer Goods", image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=900&q=85", secondaryImage: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900&q=85", category: "Consumer Goods" },
   { title: "Freight & Logistics", image: "/images/approved/c2c-shipping.webp", category: "Freight & Logistics" }
 ];
 
@@ -31,7 +31,7 @@ export default function Home() {
       <h2 id="industries-title" className="c2c-new-section-title">INDUSTRIES WE SERVE</h2>
       <div className="c2c-new-grid">
         {industries.map((industry) => <Link className="c2c-new-card" key={industry.title} href={`/quote?category=${encodeURIComponent(industry.category)}`}>
-          {industry.image.startsWith("https://") ? <img className="c2c-new-card-photo" src={industry.image} alt="" loading="lazy" /> : <Image src={industry.image} alt="" fill sizes="(max-width: 600px) 50vw, (max-width: 950px) 25vw, 25vw" />}
+          {industry.secondaryImage ? <div className="c2c-new-card-collage"><img src={industry.image} alt="" loading="lazy" /><img src={industry.secondaryImage} alt="" loading="lazy" /></div> : industry.image.startsWith("https://") ? <img className="c2c-new-card-photo" src={industry.image} alt="" loading="lazy" /> : <Image src={industry.image} alt="" fill sizes="(max-width: 600px) 50vw, (max-width: 950px) 25vw, 25vw" />}
           <span className="c2c-new-card-title">{industry.title}</span><span className="c2c-new-card-arrow" aria-hidden="true">→</span>
         </Link>)}
       </div>
