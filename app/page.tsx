@@ -5,10 +5,10 @@ const industries = [
   { title: "Apparel & Uniforms", image: "/images/approved/service-manufacturing.webp", category: "Apparel & Uniforms" },
   { title: "Automotive & Parts", image: "/images/approved/service-automotive-sourcing.webp", category: "Automotive & Parts" },
   { title: "Construction & Building Materials", image: "/images/approved/construction.webp", category: "Construction & Building Materials" },
-  { title: "Solar & Renewable Energy", image: null, category: "Solar & Renewable Energy" },
-  { title: "Home & Lifestyle", image: null, category: "Home & Lifestyle" },
-  { title: "Jewelry & Gadgets", image: null, category: "Jewelry & Gadgets" },
-  { title: "Consumer Goods", image: null, category: "Consumer Goods" },
+  { title: "Solar & Renewable Energy", image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1100&q=85", category: "Solar & Renewable Energy" },
+  { title: "Home & Lifestyle", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1100&q=85", category: "Home & Lifestyle" },
+  { title: "Jewelry & Gadgets", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1100&q=85", category: "Jewelry & Gadgets" },
+  { title: "Consumer Goods", image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=1100&q=85", category: "Consumer Goods" },
   { title: "Freight & Logistics", image: "/images/approved/c2c-shipping.webp", category: "Freight & Logistics" }
 ];
 
@@ -31,7 +31,7 @@ export default function Home() {
       <h2 id="industries-title" className="c2c-new-section-title">INDUSTRIES WE SERVE</h2>
       <div className="c2c-new-grid">
         {industries.map((industry) => <Link className="c2c-new-card" key={industry.title} href={`/quote?category=${encodeURIComponent(industry.category)}`}>
-          {industry.image ? <Image src={industry.image} alt="" fill sizes="(max-width: 720px) 25vw, 15vw" /> : <div className="c2c-new-image-pending" aria-hidden="true"><span>PHOTO COMING SOON</span></div>}
+          {industry.image.startsWith("https://") ? <img className="c2c-new-card-photo" src={industry.image} alt="" loading="lazy" /> : <Image src={industry.image} alt="" fill sizes="(max-width: 600px) 50vw, (max-width: 950px) 25vw, 25vw" />}
           <span className="c2c-new-card-title">{industry.title}</span><span className="c2c-new-card-arrow" aria-hidden="true">→</span>
         </Link>)}
       </div>
