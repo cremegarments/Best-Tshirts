@@ -341,3 +341,12 @@ body:has(.c2c-new-site){background:#080b10}
 .c2c-new-hero-logo{display:block;width:min(540px,92%);height:auto;max-height:300px;object-fit:contain;margin:0 auto 20px;background:transparent}
 .c2c-new-header-brand img{display:block;width:clamp(105px,13vw,165px);height:auto;max-height:65px;object-fit:contain;background:transparent}
 @media(max-width:600px){.c2c-new-hero-logo{width:min(380px,94%);max-height:245px;margin-bottom:15px}.c2c-new-header-brand img{width:110px;max-height:65px}}
+
+
+/* Approved C2C hero — use original uploaded artwork unchanged */
+.c2c-new-hero{background-image:linear-gradient(90deg,rgba(4,8,16,.20),rgba(3,8,17,.49) 31%,rgba(3,8,17,.55) 50%,rgba(3,8,17,.38) 69%,rgba(3,8,17,.15)),url('/BE10867A-F3A8-49AA-BDA8-57392CE7926E.png');background-position:center center;background-size:cover;background-repeat:no-repeat;min-height:560px}
+.c2c-new-hero-inner{position:relative;z-index:1}
+.c2c-new-hero-logo{width:min(450px,90%);max-height:245px;margin-bottom:9px;filter:drop-shadow(0 3px 9px rgba(0,0,0,.7))}
+.c2c-new-hero h1,.c2c-new-script,.c2c-new-description{text-shadow:0 2px 8px rgba(0,0,0,.85)}
+.c2c-new-hero .c2c-new-kicker{color:#f6d18c;text-shadow:0 2px 8px #000}
+@media(max-width:600px){.c2c-new-hero{background-position:center center;background-size:cover;min-height:660px;padding:35px 13px;background-image:linear-gradient(90deg,rgba(3,7,15,.53),rgba(3,7,15,.66) 50%,rgba(3,7,15,.53)),url('/BE10867A-F3A8-49AA-BDA8-57392CE7926E.png')}.c2c-new-hero-logo{width:min(360px,94%);max-height:210px}}
