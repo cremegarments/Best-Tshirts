@@ -26,7 +26,9 @@ export function QuoteForm() {
       if (!response.ok) throw new Error(result.message||"We couldn't submit your request.");
       setStatus("success"); setMessage("Your request has been sent. C2C will follow up with the next steps."); form.reset(); setServiceChoice("");
     } catch(error) {
-      setStatus("error"); setMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
+      const details = Object.entries(body).filter(([key,value])=>key!=="website"&&key!=="consent"&&String(value).trim()).map(([key,value])=>`${key}: ${String(value)}`).join("\n");
+      setEmailDraft(`mailto:info@c2cky.com?subject=${encodeURIComponent("C2C sourcing inquiry")}&body=${encodeURIComponent(details)}`);
+      setStatus("error"); setMessage("Automatic submission is temporarily unavailable. Tap below to open an email with your inquiry details, then send it to C2C.");
     }
   }
   return <form className="quote-form" onSubmit={submit}>
