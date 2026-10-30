@@ -426,3 +426,15 @@ body:has(.c2c-new-site){background:#080b10}
 /* Hide captions baked into the two approved photo files; retain the original images and use only the accessible live card labels. */
 .c2c-new-card-caption-cleanup img{ -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 53%,transparent 82%);mask-image:linear-gradient(to bottom,#000 0%,#000 53%,transparent 82%)}
 .c2c-new-card-caption-cleanup::after{background:linear-gradient(to bottom,transparent 35%,rgba(0,0,0,.55) 58%,#080a0e 84%)}
+
+
+/* Pricing explainer — follows the five C2C process steps */
+.pricing-explainer{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px);padding:76px 0 88px;border-bottom:1px solid var(--line)}
+.pricing-explainer-heading h2{font-size:clamp(39px,5.2vw,78px);line-height:.99;letter-spacing:-.07em;font-weight:900;margin:23px 0 0}
+.pricing-explainer-heading em{font-family:Georgia,serif;font-weight:400;font-style:italic}
+.pricing-explainer-copy{max-width:560px}
+.pricing-explainer-copy p{font-size:16px;line-height:1.72;color:#555e63;margin:0 0 18px}
+.pricing-explainer-copy .pricing-lead{font-size:clamp(20px,2.1vw,29px);font-weight:700;line-height:1.32;letter-spacing:-.035em;color:var(--ink);margin-bottom:22px}
+.pricing-explainer-copy .pricing-explainer-note{font-size:13px;line-height:1.65;color:#626c73;border-left:3px solid var(--accent);padding-left:17px;margin-top:26px}
+.pricing-explainer .button{margin-top:12px}
+@media(max-width:760px){.pricing-explainer{grid-template-columns:1fr;gap:25px;padding:61px 0 66px}.pricing-explainer-heading h2{font-size:clamp(40px,10vw,62px)}.pricing-explainer-copy p{font-size:15px}.pricing-explainer-copy .pricing-lead{font-size:23px}.pricing-explainer .button{max-width:100%;white-space:normal}}
