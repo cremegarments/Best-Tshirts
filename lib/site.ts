@@ -26,7 +26,7 @@ export const productionSteps = [
   { no: "01", title: "Tell us the idea", desc: "Tell us what you want to build, source or develop, with references, quantities and your target date." },
   { no: "02", title: "Review your quote", desc: "We review requirements, feasibility, supplier options, estimated pricing and timelines." },
   { no: "03", title: "Approve the details", desc: "Approve the agreed scope, specifications, quotation and payment terms before work begins." },
-  { no: "04", title: "We coordinate production", desc: "C2C coordinates with trusted manufacturers and suppliers in China to manage production requirements, quality standards, and international freight arrangements." },
+  { no: "04", title: "We coordinate production", desc: "C2C manages sourcing, production coordination, quality requirements, and international freight through our established supply network." },
   { no: "05", title: "Receive your order", desc: "We coordinate agreed delivery arrangements to your specified destination." },
 ];
 
