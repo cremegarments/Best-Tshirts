@@ -11,7 +11,7 @@ export function ownerEmail(r:Rfq){
   ["Attached file",r.attachmentName||"None"],
  ];
  const table=rows.map(([k,v])=>`<tr><td style="padding:10px 0;border-bottom:1px solid #e5e2db;color:#777;width:38%;vertical-align:top">${escapeHtml(k)}</td><td style="padding:10px 0;border-bottom:1px solid #e5e2db;overflow-wrap:anywhere">${escapeHtml(v)}</td></tr>`).join("");
- const body=`<p style="line-height:1.6">A new business inquiry has been submitted.</p><table style="border-collapse:collapse;width:100%;font-size:14px">${table}</table><h2 style="margin-top:28px;font-size:18px">Project requirements</h2><p style="line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere">${escapeHtml(r.details)}</p><p><a style="color:#b36649" href="mailto:${encodeURIComponent(r.email)}">Reply to the buyer →</a></p>`;
+ const body=`<p style="line-height:1.6">A new business inquiry has been submitted.</p><table style="border-collapse:collapse;width:100%;font-size:14px">${table}</table><h2 style="margin-top:28px;font-size:18px">Project requirements</h2><p style="line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere">${escapeHtml(r.details)}</p><p style="margin-top:24px;padding:14px 16px;background:#ede9df;color:#333;font-size:14px;line-height:1.6"><strong>To respond:</strong> Use your email app’s <strong>Reply</strong> button on this message. The buyer’s address is already set as the Reply-To address.</p>`;
  return shell(`New inquiry · ${r.service}`,body);
 }
 export function customerEmail(r:Rfq){
